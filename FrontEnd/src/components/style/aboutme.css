@@ -1,0 +1,28 @@
+.aboutme-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    gap: 190px;
+    align-items: center;
+}
+
+.aboutme-container p {
+    margin-bottom: 50px;
+}
+
+.sub-aboutme1 {
+    margin-left: 10px;
+}
+
+.sub-aboutme2 {
+    align-items: center;
+}
+
+.person {
+    width: 500px;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/aboutme-img/foto-gweh.svg');
+}
+

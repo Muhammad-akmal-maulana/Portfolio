@@ -1,0 +1,83 @@
+table, td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: separate;
+    width: 100%;
+    border-spacing: 10px;
+}
+
+td {
+    margin: 5px;
+    height: 100%;
+    border-radius: 5px;
+}
+
+td {
+    background-color: white;
+}
+
+.title-contact {
+    vertical-align: middle;
+}
+
+td h2 {
+    margin: 0;
+}
+
+.title-contact {
+    background-color: transparent !important;
+}
+
+.sub-contact {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.logo-name {
+    gap: 10px;
+}
+
+.follow {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.ig {
+    background-image: linear-gradient(to right top, #405de6, #0076ee, #008bef, #009eec, #40aee6);
+    color: white;
+}
+
+.follow1 {
+    margin-bottom: 10px;
+}
+
+.ig-pfp {
+    width: 100px;
+}
+
+.ig-name1 {
+    margin-bottom: 10px;
+}
+
+.comment {
+    width: 100%;
+}
+
+#send svg {
+    margin-top: 5px;
+}
+
+.see-comments {
+    background-color: white;
+    width: 100%;
+}
+
+.see-comments button {
+    gap: 10px;
+}
+
+.see-comments i {
+    margin-top: 3px;
+}

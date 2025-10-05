@@ -1,0 +1,25 @@
+.project-container {
+    margin: 0 -10px;
+}
+
+.project-drop {
+    text-align: center !important;
+}
+
+.project {
+    background-color: white;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 15px 10px;
+    box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    margin: 10px;
+}
+
+.project p {
+    margin-top: 5px;
+}
+
+.project img {
+    max-width: 190px;
+}

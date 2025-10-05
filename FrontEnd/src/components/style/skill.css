@@ -1,0 +1,165 @@
+.skill-section {
+    height: 60vh;
+}
+
+.skill-container {
+    align-items: flex-start;
+}
+
+.sub-kategori {
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.sub-kategori button {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.skill-dropdown {
+    width: 100%;
+}
+
+.sub-kategori:nth-child(-n + 1) {
+    margin-top: 0;
+}
+
+/* skill percentage */
+.skill-percentage {
+    width: 85%;
+    margin-left: 50px;
+    box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.skill {
+    gap: 8px;
+    padding: 20px 10px 0;
+}
+
+.skill:nth-child(-n + 1) {
+    padding-top: 10px;
+}
+
+.skill:last-child {
+    padding-bottom: 15px;
+}
+
+.sub-skill {
+    width: 100%;
+}
+
+.skill-bar-container {
+    background-color: darkgray;
+    height: 8px;
+    border-radius: 30px;
+    margin-top: 3px;
+}
+
+.skill-bar {
+    height: 8px;
+    border: 30px;
+    border-radius: 30px;
+}
+
+#figma-icon {
+    width: 35px;
+}
+
+#figma-icon-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* skill bar */
+#illustrator {
+    width: 80%;
+    background-image: linear-gradient(to right, #21150a, #522e12, #884913, #c2650f, #ff8300);
+}
+
+#figma {
+    width: 60%;
+    background-image: linear-gradient(to right, #1c0a21, #401252, #6d1388, #c20fc2, #ff8300);
+}
+
+#ibis-paint-x {
+    width: 80%;
+    background-image: linear-gradient(to right, #21150a, #0c3675, #0e479b, #0f6bc2, #00e1ff);
+}
+
+#ms-paint {
+    width: 80%;
+    background-image: linear-gradient(to right, #181aa3, #1a7bd6, #1bb5e4, #0fdd2b, #d0ff00);
+}
+
+#photoshop {
+    width: 100%;
+	background: linear-gradient(90deg, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 60%);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    animation: on-progress 2s ease infinite;
+}
+
+@keyframes on-progress {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#html {
+    width: 75%;
+    background-image: linear-gradient(to right, #c44e17, #e29b16, #fae319, #fff067, #d0ff00);
+}
+
+#css {
+    width: 75%;
+    background-image: linear-gradient(to right, #181aa3, #1a7bd6, #1bb5e4, #0fdd2b, #d0ff00);
+}
+
+#js {
+    width: 10%;
+    background-image: linear-gradient(to right, #c99b1c, #f1d21c, #f8f523, #eaebe9);
+}
+
+#react {
+    width: 10%;
+    background-image: linear-gradient(to left, #ffffff, #00fff2);
+}
+
+#nodejs {
+    width: 80%;
+    background-image: linear-gradient(to right, #002903, #0f5a00, #00a108, #0fdd2b);
+}
+
+#express {
+    width: 80%;
+    background-image: linear-gradient(to right, #000000, #d3d3d3, #f1ff26);
+}
+
+#mongodb {
+    width: 35%;
+    background-image: linear-gradient(to right, #18a324, #11d41b);
+}
+
+#notion {
+    width: 20%;
+    background-image: linear-gradient(to right, #2b2b2b, #ffffff);
+}
+
+#webflow {
+    width: 50%;
+    background-image: linear-gradient(to left, #ffffff, #1a7bd6, #1860a3);
+}

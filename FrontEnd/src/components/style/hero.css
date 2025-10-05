@@ -1,0 +1,91 @@
+/* parallax background */
+.parallax-wrapper .parallax {
+    height: 100vh;
+}
+
+.parallax-wrapper {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax {
+    position: absolute;
+    background-size: cover;      
+    background-position: bottom; 
+    background-repeat: no-repeat;
+    width: 100vw;                
+    height: 100vh;                
+    position: absolute;          
+    bottom: 0;
+    left: 0;
+}
+
+/* hero section */
+.hero-section {
+    padding-top: 300px;
+    color: white;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+p, h1 {
+    margin: 0;
+}
+
+.hero-section a {
+    margin-top: 10px;
+    background: white;
+    border-radius: 5px;
+    padding: 8px 8px 8px 14px;
+    display: flex;
+    align-content: center;
+    width: fit-content;
+    gap: 5px;
+}
+
+/* responsive */
+/* huge monitor */
+@media (max-width: 1440px) {
+    
+    #front {
+        background-image: url('/parallax-asset/front-grass.png');
+    }
+    
+    #middle {
+        background-image: url('/parallax-asset/middle-grass.png');
+    }
+    
+    #back {
+        background-image: url('/parallax-asset/back-grass.png');
+    }
+    
+    #sky {
+        background-image: url('/parallax-asset/grass-background.png');
+    }
+
+}
+
+/* thin monitor */
+@media (max-width: 1366px) {
+    
+    #front {
+        background-image: url('/parallax-asset/desktop-1365x647/front-grass.png');
+    }
+    
+    #middle {
+        background-image: url('/parallax-asset/desktop-1365x647/middle-grass.png');
+    }
+    
+    #back {
+        background-image: url('/parallax-asset/desktop-1365x647/back-grass.png');
+    }
+    
+    #sky {
+        background-image: url('/parallax-asset/desktop-1365x647/background.png');
+    }
+
+}
