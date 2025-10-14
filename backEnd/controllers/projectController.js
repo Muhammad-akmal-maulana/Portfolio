@@ -13,7 +13,7 @@ export const getAllProjects = async (req, res) => {
 // buat project baru
 export const createProject = async (req, res) => {
   try {
-    const { title, description, kategori } = req.body;
+    const { title, deskripsi, kategori } = req.body;
     const image = req.file ? req.file.filename : null;
 
     const project = new Project({
@@ -33,12 +33,12 @@ export const createProject = async (req, res) => {
 // update project
 export const updateProject = async (req, res) => {
     try {
-        const { title, category } = req.body;
+        const { title, kategori } = req.body;
         const image = req.file ? `/uploads/${req.file.filename}` : undefined;
 
         const updated = await Project.findByIdAndUpdate(
             req.params.id,
-            { title, category, ...(image && { image }) },
+            { title, kategori, ...(image && { image }) },
             { new: true }
         );
 
