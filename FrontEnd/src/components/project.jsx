@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Dropdown from './fitur/dropdown';
 import './style/project.css';
 import FadeInAnimation from './fitur/fadeIn';
-import ContactMe from './contactMe';
+import ProjectCard from './projectCard';
 
 function Project() {
     const [activeCategory, setActiveCategory] = useState("all");
@@ -50,6 +50,8 @@ function Project() {
                             </div>
                         )}
                     </FadeInAnimation>
+
+                    <ProjectCard/>
 
                 </div>
             </section>

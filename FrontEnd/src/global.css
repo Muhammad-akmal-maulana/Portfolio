@@ -25,7 +25,6 @@ body {
 
 section {
     padding: 100px 3% 0px;
-
 }
 
 button {
@@ -42,11 +41,55 @@ ul {
     margin: 0;
 }
 
-input {
+input,
+textarea,
+select {
     border: none;
     outline: none;
-    background-color: transparent;
+    background-color: whitesmoke;
     font-size: 15px;
+    font-family: 'poppins', sans-serif;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    color: #000 !important;
+    z-index: 1;
+}
+
+/* override Chrome autofill (seluruh state) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px whitesmoke inset !important;
+    box-shadow: 0 0 0px 1000px whitesmoke inset !important;
+    -webkit-text-fill-color: #000 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+}
+
+/* Chrome sometimes needs ::first-line override */
+input:-webkit-autofill::first-line,
+textarea:-webkit-autofill::first-line {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Firefox autofill */
+input:-moz-autofill,
+textarea:-moz-autofill,
+select:-moz-autofill {
+    box-shadow: 0 0 0px 1000px whitesmoke inset !important;
+    -moz-text-fill-color: #000 !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.box-shadow {
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .section {
@@ -134,7 +177,6 @@ input {
     opacity: 0;
     max-height: 0px;
     transform: translateY(-10px);
-    pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
     margin-top: -17px;
     padding-top: 0;
@@ -151,7 +193,6 @@ input {
 .dropdown-content.show {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto;
     max-height: fit-content;
     margin-top: -25px;
     padding-top: 30px;

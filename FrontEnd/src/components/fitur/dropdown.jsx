@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function Dropdown({ 
     label, 
@@ -9,6 +9,20 @@ function Dropdown({
 }) {
 
     const [open, setOpen] = useState(false);
+    const rootRef = useRef(null);
+
+    useEffect(() => {
+        const onDocClick = (e) => {
+            if (!rootRef.current) return;
+            if (!rootRef.current.contains(e.target)) setOpen(false);
+        };
+        document.addEventListener("click", onDocClick);
+        return () => document.removeEventListener("click", onDocClick);
+    }, []);
+
+    const handleContentClick = (e) => {
+        if (e.target.closest("button")) setOpen(false);
+    };
 
     return (
         <div className={`dropdown fade-in ${className}`}>

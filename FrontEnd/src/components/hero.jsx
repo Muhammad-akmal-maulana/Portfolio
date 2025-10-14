@@ -7,8 +7,7 @@ function HeroSection() {
 
     return (
         <div id='hero-section'>
-            <Parallax pages={1.65} style={{ top: '0', left: '0' }}>
-
+            <Parallax pages={1.66} style={{ top: '0', left: '0' }}>
                 <ParallaxLayer offset={0} speed={1.5}>
                     {/* nanti gambar bakal di jadiin background image */}
                     <div className="parallax" id='sky'></div>

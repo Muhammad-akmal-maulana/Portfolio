@@ -1,14 +1,16 @@
 import React, { Component, useState, useEffect } from 'react';
 import Comments from './comments';
+import Dropdown from './fitur/dropdown';
 import './style/contactme.css';
 
 function ContactMe() {
+    const [show, setShow] = useState(false);
 
     return (
-        <section className="section">
-            <table>
+        <>
+            <table className='section'>
                 <tr>
-                    <td className='title-contact sub-contact'><h2>Contact Me</h2></td>
+                    <td className='title-contact'><h2>Contact Me</h2></td>
                     <td>
                         <div className="sub-contact flex justify-beetween align-item-center">
                             <svg
@@ -195,16 +197,25 @@ function ContactMe() {
                 </tr>
             </table>
 
-            <div className="">
-                <button 
-                    className='flex align-item-center see-comments justify-center sub-contact' 
+            <section className='see-comments-container'>
+                <button
+                    className='flex align-item-center see-comments justify-center sub-contact box-shadow' 
+                    onClick={() => setShow(!show)}
                 >
                     <p>See Comments</p>
                     <i className="bi bi-chevron-right"></i>
                 </button>
-            </div>
 
-        </section>
+                {show && (
+                    <div className="">
+                        <p>anjeng1</p>
+                        <p>anjeng2</p>
+                        <p>anjeng3</p>
+                    </div>
+                )}
+            </section>
+            
+        </>
     );
 }
 
