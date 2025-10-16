@@ -7,7 +7,7 @@ function ContactMe() {
     const [show, setShow] = useState(false);
 
     return (
-        <>
+        <div className='contactme'>
             <table className='section'>
                 <tr>
                     <td className='title-contact'><h2>Contact Me</h2></td>
@@ -207,15 +207,11 @@ function ContactMe() {
                 </button>
 
                 {show && (
-                    <div className="">
-                        <p>anjeng1</p>
-                        <p>anjeng2</p>
-                        <p>anjeng3</p>
-                    </div>
+                    <></>
                 )}
             </section>
             
-        </>
+        </div>
     );
 }
 

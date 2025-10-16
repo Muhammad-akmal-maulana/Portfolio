@@ -5,7 +5,7 @@ function EditProject({ project, onCancel, onUpdated }) {
     async function handleUpdate(formData) {
         const data = new FormData();
         data.append("title", formData.title);
-        data.append("description", formData.description);
+        data.append("deskripsi", formData.deskripsi);
         if (formData.image) data.append("image", formData.image);
 
         try {

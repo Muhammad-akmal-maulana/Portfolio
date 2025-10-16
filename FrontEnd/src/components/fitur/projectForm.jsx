@@ -1,18 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-function ProjectForm({ onSubmit, initialData = {} }) {
+function ProjectForm({ onSubmit, initialData = {}, resetForm }) {
   const [title, setTitle] = useState(initialData.title || "");
-  const [description, setDescription] = useState(initialData.description || "");
+  const [deskripsi, setDeskripsi] = useState(initialData.deskripsi || "");
   const [kategori, setKategori] = useState(initialData.kategori || "pkl"); // default 'pkl'
   const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState(null);
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
-    // hanya reset jika initialData benar-benar berbeda (misalnya untuk edit mode)
+    // reset saat ganti mode, misal dari tambah ke edit
     setTitle(initialData.title || "");
-    setDescription(initialData.description || "");
+    setDeskripsi(initialData.deskripsi || "");
     setKategori(initialData.kategori || "pkl");
-    setImage(null); // reset image pada saat edit
-  }, [initialData.id])
+    setImage(null); 
+    setPreview(
+      initialData.image
+        ? `http://localhost:5000/uploads/${initialData.image}`
+        : null
+    );
+    if (fileInputRef.current) fileInputRef.current.value = ""; // reset file input saat edit
+
+  }, [initialData.id]);
+
+  useEffect(() => { //menampilkan gambar yang diinput
+    if (image) {
+      const objectUrl = URL.createObjectURL(image);
+      setPreview(objectUrl);
+      return () => URL.revokeObjectURL(objectUrl);
+    }
+  }, [image]);
+
+  //reset form jika reset form berubah
+  useEffect(() => {
+    if (resetForm) {
+      setTitle("");
+      setDeskripsi("");
+      setKategori("pkl");
+      setImage(null);
+      setPreview(null);
+
+      if (fileInputRef.current) fileInputRef.current.value = ""; // reset file input
+    }
+  }, [resetForm]);
 
   const handleFileChange = (e) => {
     const file = e.target.files && e.target.files[0];
@@ -22,15 +52,14 @@ function ProjectForm({ onSubmit, initialData = {} }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!title.trim()) return;
-    // kirim objek form sederhana, handler parent akan membungkus ke FormData jika perlu
+
     onSubmit({
       title: title.trim(),
-      description: description.trim(),
+      deskripsi: deskripsi.trim(),
       kategori,
       image,
     });
-    // optional: reset form
-    // setTitle(""); setDescription(""); setKategori("pkl"); setImage(null);
+
   };
 
   return (
@@ -50,8 +79,8 @@ function ProjectForm({ onSubmit, initialData = {} }) {
         <label>Deskripsi</label>
         <textarea
           placeholder="Deskripsi singkat"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={deskripsi}
+          onChange={(e) => setDeskripsi(e.target.value)}
           rows={4}
         />
       </div>
@@ -66,11 +95,19 @@ function ProjectForm({ onSubmit, initialData = {} }) {
 
       <div className="">
         <label>Gambar</label>
-        <input 
-          type="file" 
-          accept="image/*" 
-          onChange={handleFileChange} 
-          required/>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          ref={fileInputRef}
+          required />
+        {preview && (
+          <img
+            src={preview}
+            alt="preview"
+            style={{ maxWidth: "240px", maxHeight: "160px", marginTop: 8, display: "block" }}
+          />
+        )}
       </div>
 
       <div className="">

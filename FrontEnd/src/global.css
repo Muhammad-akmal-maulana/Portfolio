@@ -46,7 +46,7 @@ textarea,
 select {
     border: none;
     outline: none;
-    background-color: whitesmoke;
+    background-color: transparent;
     font-size: 15px;
     font-family: 'poppins', sans-serif;
     pointer-events: auto !important;
@@ -65,8 +65,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px whitesmoke inset !important;
-    box-shadow: 0 0 0px 1000px whitesmoke inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
     -webkit-text-fill-color: #000 !important;
     font-family: 'Poppins', sans-serif !important;
     font-size: 15px !important;
@@ -83,7 +83,7 @@ textarea:-webkit-autofill::first-line {
 input:-moz-autofill,
 textarea:-moz-autofill,
 select:-moz-autofill {
-    box-shadow: 0 0 0px 1000px whitesmoke inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
     -moz-text-fill-color: #000 !important;
     font-family: 'Poppins', sans-serif !important;
 }
@@ -119,6 +119,15 @@ select:-moz-autofill {
 
 .icon {
     width: 30px;
+}
+
+.project-image {
+    max-width: 400px;
+}
+
+.blue-button {
+    background-image: linear-gradient(to right top, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
+    color: white;
 }
 
 /* animasi fade in */

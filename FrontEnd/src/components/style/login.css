@@ -1,3 +1,104 @@
 .login-body {
     height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to right top, #58773a, #629064, #73a88d, #8ebfb3, #b2d5d3, #bddbdc, #c8e1e5, #d4e7ec, #c6dee6, #b8d5e1, #abccdd, #9fc2d8);
+}
+
+.login-sub-body {
+    height: 105vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: top 10px;
+    background-image: url('/background/background-1440x1024.png');
+    filter: blur(5px);
+}
+
+.login-container {
+    background-image: linear-gradient(to left bottom, #ffffff, rgb(233, 233, 233));
+    border-radius: 9px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+.image-container {
+    width: 300px;
+    height: 400px;
+    overflow: hidden; 
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.left-image {
+    width: 300px;
+    height: 400px;
+    background-image: url('/background/background-1440x1024.png');
+    background-size: cover;
+    background-position: right;
+}
+
+.left-image:hover {
+    transform: scale(1.1);
+}
+
+.login-title {
+    font-size: 30px;
+}
+
+.login-subtitle {
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.login-subtitle span {
+    position: relative;
+}
+
+.login-subtitle span::before { /*underline*/
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-image: linear-gradient(to right, #4ea2ce, #248ac5, #0071bb, #0057ad, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
+    z-index: -1;
+    background-size: 200% 100%;
+    animation: underline 5s ease infinite;
+}
+
+@keyframes underline {
+    0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 200% 50%;
+	}
+}
+
+.form-login div {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+form .password {
+    margin-bottom: 50px;
+}
+
+#see-password {
+    margin-bottom: -10px;
+}
+
+.bi-lock-fill, .bi-person-fill {
+    padding: 0 5px;
+}
+
+
+.login-button {
+    border-radius: 5px;
+    padding: 5px 0;
+    width: 100%;
 }
