@@ -1,6 +1,84 @@
+.admin-section {
+    margin-top: -40px;
+}
+
+.admin-title {
+    margin-bottom: 30px;
+}
+
+.admin-title h1 {
+    position: relative;
+    z-index: 1;
+}
+
+.admin-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: -3.5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, #4ea2ce, #248ac5, #0071bb, #0057ad, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
+    z-index: 0;
+    background-size: 200% 100%;
+    animation: underline 3s ease infinite;
+    transition: 1s ease-in;
+}
+
+.admin-title h1:hover::after {
+    width: 100%;
+}
+
+
+.logout {
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
 .project-image-admin {
     max-width: 130px;
     margin-top: 5px;
+}
+
+.filter-container {
+    margin-bottom: 20px;
+}
+
+.filter-container button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid #141414;
+    margin: 0 5px;
+}
+
+.filter-container button:hover {
+    background-color: #7a7a7a;
+    border: 1px solid #7a7a7a;
+    color: white;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.filter-container button[aria-pressed="true"] {
+    background-color: #141414;
+    color: white;
+}
+
+.filter-container button[aria-pressed="true"]:hover {
+    background-color: #7a7a7a;
+    border: 1px solid #7a7a7a;
+    color: white;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.new-button-container {
+    margin-top: 16px;
+}
+
+.new-project-button2 {
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin: auto;
 }
 
 table.table-admin {
@@ -8,29 +86,26 @@ table.table-admin {
     border-collapse: collapse;
 }
 
-table.table-admin th, td {
+table.table-admin th,
+td {
     text-align: center;
+    vertical-align: middle;
     border-bottom: 1px solid #bebebe;
 }
 
 table.table-admin td button {
-    padding: 10px 0;
-    width: 100%;
+    padding: 5px 10px;
     border-radius: 5px;
     margin: 10px 0;
-    color: white;
+    color: white
 }
 
 table.table-admin td button:nth-child(1) {
     margin-bottom: 0;
 }
 
-table.table-admin td button:nth-child(2) {
-    background-image: linear-gradient(to right top, #b80000, #c90400, #db0900, #ed0f00, #ff1400);
-}
-
 table.table-admin th {
-    background-color: rgb(14, 14, 14);
+    background-color: #00008B;
     color: white;
     height: 30px;
 }

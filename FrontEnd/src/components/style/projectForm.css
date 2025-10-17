@@ -1,0 +1,104 @@
+.batal {
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.admin-title {
+    margin-top: -25px;
+}
+
+.project-form {
+    background-image: linear-gradient(to right bottom, #ffffff,  #fdfdfd, rgb(233, 233, 233));
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.project-form input, select, .img-container label {
+    cursor: pointer;
+}
+
+.project-form input[type='text'], .deskripsi,
+.img-container {
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+.preview-image {
+    max-width: 325px;
+}
+
+.img-container {
+    width: 500px;
+    height: 420px;
+    position: relative;
+    display: flex;               
+    align-items: center;        
+    justify-content: center;   
+    overflow: hidden; 
+    margin: 0 20px 0 5px;
+}
+
+.add-image-after {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 400px;
+    height: 420px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    opacity: 0;
+}
+
+.add-image-after:hover {
+    opacity: 1;
+}
+
+.add-image-after label {
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.add-image-before {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+.img-container p {
+    font-size: 15px;
+    text-align: center;  
+}
+
+.sub-form {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.sub-form input, textarea {
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 10px;
+    width: 98%;
+}
+
+.sub-form textarea {
+    display: block;
+    height: 100px;
+    resize: none;
+}
+
+.project-form button {
+    width: 100%;
+    padding: 10px 0;
+}

@@ -29,9 +29,14 @@ function CreateProject({ onCreated, onCancel }) {
 
     return (
         <div>
-            <h3>Buat Project Baru</h3>
+            <div className="admin-title flex justify-beetween align-item-center">
+                <h1>Buat Project Baru</h1>
+                <button 
+                    onClick={() => onCancel && onCancel()}
+                    className='red-button batal box-shadow'
+                >Batal</button>
+            </div>
             <ProjectForm onSubmit={handleCreate} resetForm={resetForm} />
-            <button onClick={() => onCancel && onCancel()}>Batal</button>
         </div>
     );
 }

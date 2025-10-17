@@ -22,9 +22,14 @@ function EditProject({ project, onCancel, onUpdated }) {
 
     return (
         <div>
-            <h3>Edit Project</h3>
+            <div className="admin-title flex justify-beetween align-item-center">
+                <h1>Edit Project</h1>
+                <button 
+                    onClick={onCancel}
+                    className='red-button batal box-shadow'
+                >Batal</button>
+            </div>
             <ProjectForm onSubmit={handleUpdate} initialData={project} />
-            <button onClick={onCancel}>Batal</button>
         </div>
     );
 }

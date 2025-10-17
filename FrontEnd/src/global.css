@@ -128,6 +128,15 @@ select:-moz-autofill {
 .blue-button {
     background-image: linear-gradient(to right top, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
     color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.red-button {
+    background-image: linear-gradient(to right top, #b80000, #c90400, #db0900, #ed0f00, #ff1400);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
 }
 
 /* animasi fade in */
