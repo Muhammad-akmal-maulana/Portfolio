@@ -6,17 +6,26 @@ function EditProject({ project, onCancel, onUpdated }) {
         const data = new FormData();
         data.append("title", formData.title);
         data.append("deskripsi", formData.deskripsi);
+        data.append("kategori", formData.kategori);
         if (formData.image) data.append("image", formData.image);
 
+        // debug: tampilkan semua entry FormData
+        for (const pair of data.entries()) console.log(pair[0], pair[1]);
+
         try {
-            await fetch(`http://localhost:5000/api/project/${project._id}`, {
+            const res = await fetch(`http://localhost:5000/api/project/${project._id}`, {
                 method: "PUT",
                 body: data,
             });
-            onUpdated();
-            onCancel();
+            console.log("response status", res.status);
+            const body = await res.text();
+            console.log("response body:", body);
+            if (!res.ok) throw new Error(body || "Gagal mengupdate project");
+            onUpdated && onUpdated();
+            onCancel && onCancel();
         } catch (err) {
-            console.error("Gagal mengupdate project:", err);
+            console.error(err);
+            alert("Gagal mengupdate project");
         }
     }
 
@@ -24,7 +33,7 @@ function EditProject({ project, onCancel, onUpdated }) {
         <div>
             <div className="admin-title flex justify-beetween align-item-center">
                 <h1>Edit Project</h1>
-                <button 
+                <button
                     onClick={onCancel}
                     className='red-button batal box-shadow'
                 >Batal</button>

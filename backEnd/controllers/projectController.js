@@ -34,20 +34,13 @@ export const createProject = async (req, res) => {
 
 // update project
 export const updateProject = async (req, res) => {
-    try {
-        const { title, kategori } = req.body;
-        const image = req.file ? `/uploads/${req.file.filename}` : undefined;
-
-        const updated = await Project.findByIdAndUpdate(
-            req.params.id,
-            { title, kategori, ...(image && { image }) },
-            { new: true }
-        );
-
-        res.status(200).json({ message: "Project diperbarui", project: updated });
-    } catch (err) {
-        res.status(500).json({ message: 'Gagal mengupdate project' });
-    }
+    const { id } = req.params;
+    const { title, deskripsi, kategori } = req.body;
+    const update = { title, deskripsi, kategori };
+    if (req.file) update.image = req.file.filename;
+    const project = await Project.findByIdAndUpdate(id, update, { new: true });
+    if (!project) return res.status(404).json({ message: "Not found" });
+    res.json(project);
 };
 
 // hapus project

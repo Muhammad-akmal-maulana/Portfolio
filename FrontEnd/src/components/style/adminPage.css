@@ -8,7 +8,7 @@
 
 .admin-title h1 {
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .admin-title h1::after {
@@ -29,12 +29,145 @@
     width: 100%;
 }
 
+.close svg {
+    margin-bottom: -5px;
+}
 
-.logout {
+.close {
+    padding: 2px 5px !important;
+}
+
+/* popup delete */
+.blur-bg {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+}
+
+.white-bg {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.popup-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+}
+
+.sub-popup-container {
+    position: relative;
+    z-index: 3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header {
+    padding: 10px 10px !important;
+    border-radius: 0!important;
+}
+
+.header button {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header svg {
+    margin-bottom: -6px;
+    color: white;
+}
+
+.header svg:hover {
+    color: red;
+}
+
+.header p {
+    padding-left: 5px;
+}
+
+.sub-popup {
+    background-image: linear-gradient(to left bottom, #ffffff, rgb(233, 233, 233));
+    padding: 30px 30px 20px;
+    text-align: center;
+}
+
+.popup-image img {
+    width: 100px;
+    position: relative;
+    z-index: 4;
+}
+
+.popup-image svg {
+    position: relative;
+    color: red;
+    z-index: 5;
+    right: 30px;
+    top: 20px;
+}
+
+.middle-popup {
+    margin: 0 !important;
+}
+
+.popup-text p {
+    margin-right: 5px ;
+    text-align: left;
+    color: #494949;
+}
+
+.popup-text span {
+    font-weight: 600;
+    color: black;
+}
+
+.gif {
+    height: 170px;
+    width: 240px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-image: url('/random-img/omni-man-are-you-sure.gif');
+    background-size: cover;
+    background-position: top;
+    margin: 0 20px 15px 0;
+}
+
+
+.popup-text h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.popup-text {
+    margin-left: 15px;
+}
+
+.sub-logout > div.flex {
+    margin: 20px 0 10px;
+    gap: 20px;
+}
+
+.popbutton-container {
+    padding-top: 15px;
+}
+
+.logout, .stay {
     padding: 5px 20px;
     border-radius: 5px;
 }
 
+.stay {
+    color: #494949 !important;
+    border: 1px solid #494949;
+    margin: 0 10px !important;
+}
+
+.red-one button {
+    margin: 0 !important;
+}
+
+/* table dan lain lain */
 .project-image-admin {
     max-width: 130px;
     margin-top: 5px;
@@ -52,8 +185,8 @@
 }
 
 .filter-container button:hover {
-    background-color: #7a7a7a;
-    border: 1px solid #7a7a7a;
+    background-color: #141414;
+    border: 1px solid #141414;
     color: white;
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -64,9 +197,9 @@
 }
 
 .filter-container button[aria-pressed="true"]:hover {
-    background-color: #7a7a7a;
-    border: 1px solid #7a7a7a;
-    color: white;
+    background-color: whitesmoke;
+    border: 1px solid #141414;
+    color: #141414;
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
 
 }
@@ -108,4 +241,13 @@ table.table-admin th {
     background-color: #00008B;
     color: white;
     height: 30px;
+}
+
+.update {
+    background-image: linear-gradient(to right top, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
+    margin: 10px !important;
+}
+
+.delete {
+    background-image: linear-gradient(to right top, #b80000, #c90400, #db0900, #ed0f00, #ff1400);
 }

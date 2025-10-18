@@ -18,7 +18,7 @@ function CreateProject({ onCreated, onCancel }) {
             });
             if (!res.ok) throw new Error("Gagal input gambar");
             setResetForm(true); // trigger reset
-            onCreated();
+            onCreated && onCreated(); 
             onCancel();
         } catch (err) {
             alert("Gagal input gambar");

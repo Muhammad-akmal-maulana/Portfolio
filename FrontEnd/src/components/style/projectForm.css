@@ -21,7 +21,7 @@
 }
 
 .project-form input[type='text'], .deskripsi,
-.img-container {
+.img-container, .dropdown-kategori {
     border: 1px solid #bbbbbb;
     border-radius: 5px;
 }
@@ -89,7 +89,7 @@
     height: 40px;
     margin: 10px 0;
     padding: 0 10px;
-    width: 98%;
+    width: 97%;
 }
 
 .sub-form textarea {
@@ -98,7 +98,38 @@
     resize: none;
 }
 
+.deskripsi, select {
+    margin: 10px 0;
+}
+
 .project-form button {
     width: 100%;
     padding: 10px 0;
+}
+
+.kategori-content {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+}
+
+.kategori {
+    margin: 20px 0;
+}
+
+.kategori label {
+    margin-right: 20px;
+}
+
+.kategori svg {
+    margin-left: 10px;
+}
+
+.kategori-trigger {
+    height: 35px;
+    width: 110px !important;
+}
+
+.dropdown-kategori {
+    padding: 0 10px;
 }
