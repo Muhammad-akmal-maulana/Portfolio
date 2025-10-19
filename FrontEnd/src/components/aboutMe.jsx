@@ -12,13 +12,13 @@ function Aboutme() {
                     designer yang mengandalkan adobe illustrator dan figma sebagai
                     tools andalan saya<br /><br />
 
-                    Saya suka menuangkan imajinasi saya dalam bentuk posterdan ilustrasi
+                    Saya suka menuangkan imajinasi saya dalam bentuk poster dan ilustrasi
                     digital. Dalam karya yang saya buat saya selalu memperhatikan
                     estetika dan makna dari setiap warna dan bentuk yang saya pilih.
                     <br /><br />
 
                     Selama beberapa waktu ini saya sudah mengerjakan beberapakarya
-                    mulai dari design personal, benner event, logo, hinggaproyek
+                    mulai dari design personal, banner event, logo, hingga proyek
                     branding beberapa pihak.
                 </p>
             </div>

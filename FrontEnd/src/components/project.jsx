@@ -39,7 +39,7 @@ function Project() {
                 </Dropdown>
             </div>
 
-            <div className="project-container flex">
+            <div className="project-container flex  ">
 
                 {projects.length > 0 ? (
                     projects.map(project => (

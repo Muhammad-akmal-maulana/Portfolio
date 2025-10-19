@@ -40,7 +40,6 @@
 /* popup delete */
 .blur-bg {
     position: absolute;
-    z-index: 2;
     width: 100%;
     height: 100%;
     backdrop-filter: blur(3px);
@@ -52,6 +51,7 @@
 
 .popup-container {
     position: fixed;
+    z-index: 9998;
     width: 100%;
     height: 100%;
     inset: 0;
@@ -217,6 +217,7 @@
 table.table-admin {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 80px;
 }
 
 table.table-admin th,
@@ -250,4 +251,50 @@ table.table-admin th {
 
 .delete {
     background-image: linear-gradient(to right top, #b80000, #c90400, #db0900, #ed0f00, #ff1400);
+}
+
+/* pagenation */
+.pagenation-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.pagenation {
+    margin: 0 3% 20px;
+    border-radius: 50px;
+    padding: 10px;
+    background-color: rgba(252, 252, 252, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgb(230, 230, 230);
+    z-index: 0;
+}
+
+/* next dan previous jika tidak aktif */
+.pagenation .previous.disabled,
+.pagenation .next.disabled,
+.pagenation .previous[disabled],
+.pagenation .next[disabled] {
+    color: #adadad;
+    cursor: default;
+    opacity: 0.6;
+}
+
+/* titik di tengah jika page lebih dari 3 */
+.dots {
+    padding: 6px 8px;
+    color: #adadad;;
+}
+
+/* page yang sedang dikunjungi */
+
+.page-number.active {
+    padding: 0 10px !important;
+    border-radius: 5px;
+}
+
+.pages {
+    margin: 0 10px;
+    gap: 5px;
 }

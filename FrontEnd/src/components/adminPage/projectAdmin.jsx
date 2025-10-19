@@ -14,26 +14,41 @@ function ProjectAdmin({ project, onEdit, onDeleted }) {
         }
     }
 
+    // potong setelah huruf ke N, tambahkan ...
+    function batasiKata(text, limit = 21) {
+        if (!text) return "";
+
+        text = String(text).trim();
+        if (text.length <= limit) return text;
+        return text.slice(0, limit) + "…";
+    }
+
     const imageUrl = project.image //menampilkan image yang sudah ditampilkan pada card
         ? `http://localhost:5000/uploads/${project.image}`
         : "";
 
     return (
-        <table className="">
-            <h4>{project.title}</h4>
-            {project.image && (
-                <img 
-                    src={imageUrl} 
-                    alt={project.title} 
-                    className='project-image'
-                />
-            )}
-            <p>{project.deskripsi}</p>
-            <p>{project.kategori}</p>
+        <tr className="">
+            <td>
+                {project.image && (
+                    <img
+                        src={imageUrl}
+                        alt={project.title}
+                        className='project-image-admin'
+                    />
+                )}
+            </td>
+            <td>{batasiKata(project.title, 21)}</td>
+            <td>{batasiKata(project.deskripsi, 21)}</td>
+            <td>{project.kategori}</td>
 
-            <button onClick={() => onEdit(project)}>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
-        </table>
+            <td>
+                <div className="flex justify-center">
+                    <button type="button" onClick={onEdit} className='update'>Update</button>
+                    <button type="button" onClick={onOpenDelete} className='delete'>Delete</button>
+                </div>
+            </td>
+        </tr>
     );
 }
 
