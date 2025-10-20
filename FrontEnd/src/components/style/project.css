@@ -1,3 +1,12 @@
+.project-section {
+    position: relative;
+    z-index: 2;
+}
+
+.drop-trigger-project {
+    z-index: 10;
+}
+
 .project-container {
     margin: 0 -10px;
 }
@@ -6,20 +15,59 @@
     text-align: center !important;
 }
 
-.project {
+.project-subcontainer {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.project-subcontainer .see-more,
+.project-subcontainer .last-project,
+.project-subcontainer .regular {
     background-color: white;
-    width: fit-content;
-    border-radius: 10px;
-    padding: 15px 10px;
-    box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.15);
-    display: inline-block;
-    margin: 10px;
+    width: 25% !important;
+    height: 394px !important;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15);
 }
 
-.project p {
-    margin-top: 5px;
+.project-subcontainer .see-more {
+    background-color: rgba(255, 522, 255, 0.4) !important;
+    position: absolute;
+    width: 22% !important;
+    right: 3%;
+    backdrop-filter: blur(2px);
 }
 
-.project img {
-    max-width: 190px;
+.project-subcontainer .see-more:hover {
+    background-color: rgba(255, 522, 255, 0.8) !important;
+    backdrop-filter: blur(6px);
+}
+
+.project-subcontainer .see-more:hover div,
+.project-subcontainer .last-project:hover,
+.project-subcontainer .regular:hover {
+    transform: scale(1.1);
+}
+
+.project-subcontainer .see-more div {
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.project-subcontainer .see-more div p {
+    margin: 0;
+}
+
+.see-more svg {
+    margin: 0 0 -2px;
+}
+
+/* card */
+.project-subcontainer .project-card img {
+    max-width: 280px;
+    border-radius: 3px;
 }

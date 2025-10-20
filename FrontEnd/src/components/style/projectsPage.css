@@ -1,0 +1,101 @@
+* .projects-page {
+    box-sizing: border-box;
+}
+
+section.projects-page {
+    padding: 50px 3% 0 !important;
+    background-color: whitesmoke;
+}
+
+.projects-page .back {
+    padding: 10px 20px 10px 15px;
+}
+
+.projects-page .project-header {
+    padding-bottom: 30px;
+}
+
+.projects-page .back p {
+    margin: 0;
+}
+
+.projects-page .project-header .filter-container {
+    margin: 0;
+}
+
+.projectPage-container {
+    padding: 0;
+    column-count: 4;
+    column-gap: 20px;
+}
+
+/* project User */
+.project-card {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+
+    background-color: white;
+    border-radius: 5px;
+    width: fit-content;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-card:hover .sub-project-card {
+    opacity: 1;
+}
+
+.project-card .sub-project-card {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    position: relative;
+    z-index: 2;
+    margin-top: -88px;
+    padding: 20px 10px 8px;
+    opacity: 0;
+}
+
+.project-card p {
+    margin: 0;
+}
+
+.project-card h3 {
+    margin: 0 0 -7px;
+    font-weight: 500;
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.project-card .kategori {
+    margin: 0;
+    color: white;
+}
+
+.project-card .non-pkl {
+    margin: 0;
+    background-image: linear-gradient(to right top, #ff8e00, #ff9c00, #ffaa00, #ffb700, #ffc500);
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.project-card .kategori .non-pkl {
+    margin: 0;
+}
+
+.project-card .deskripsi {
+    color: gray;
+    border: none;
+}

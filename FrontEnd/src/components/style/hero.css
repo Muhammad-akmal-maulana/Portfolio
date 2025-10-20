@@ -27,12 +27,12 @@
     color: white;
 }
 
-h1 {
+.hero-section h1 {
     font-size: 40px;
     line-height: 1.2;
 }
 
-p, h1 {
+.hero-section p, h1 {
     margin: 0;
 }
 

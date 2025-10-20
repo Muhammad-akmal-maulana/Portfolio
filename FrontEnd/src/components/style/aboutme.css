@@ -14,6 +14,65 @@
     margin-left: 10px;
 }
 
+.sub-aboutme1 h2 {
+    font-family: "Anton", sans-serif;
+    font-weight: 100;
+    font-size: 100px;
+    margin: -40px 0 0;
+    transform: scaleY(1.2) !important;
+}
+
+.sub-aboutme1 div>.flex {
+    background-image: linear-gradient(to right top, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
+    color: white;
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 50px;
+    position: absolute;
+    margin: -83px 0 0 274px;
+    z-index: 1;
+}
+
+.sub-aboutme1 div>p {
+    margin: 0 !important;
+}
+
+.sub-aboutme1 div>div {
+    background-color: white;
+}
+
+.typing-anim {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    height: 25px;
+
+}
+
+.cursor-blink {
+    display: inline-block;
+    width: 2px;
+    height: 15px;
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 0.8s steps(1) infinite;
+    border-radius: 1px;
+}
+
+@keyframes blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
 .sub-aboutme2 {
     align-items: center;
 }
@@ -25,4 +84,3 @@
     background-position: center;
     background-image: url('/aboutme-img/foto-gweh.svg');
 }
-

@@ -6,8 +6,9 @@ import RequireAuth from './auth/requireAuth';
 import UserPage from './pages/userPage';
 import AdminPage from './pages/adminPage';
 import LoginPage from './pages/loginPage';
+import ProjectsPage from './pages/projectPage';
+import Project from './components/project';
 
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; //bootstrap fungsi js saja tanpa style
 import "bootstrap-icons/font/bootstrap-icons.css"; // icon bootstrap
 import './global.css';
 
@@ -28,6 +29,9 @@ createRoot(document.getElementById('root')).render(
             </RequireAuth>
           }
         />
+
+        <Route path="/projectPage" element={<ProjectsPage />} />
+        <Route path="/project" element={<Project />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

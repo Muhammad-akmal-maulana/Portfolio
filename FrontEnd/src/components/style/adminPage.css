@@ -184,23 +184,15 @@
     margin: 0 5px;
 }
 
-.filter-container button:hover {
-    background-color: #141414;
-    border: 1px solid #141414;
-    color: white;
-    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
 .filter-container button[aria-pressed="true"] {
     background-color: #141414;
     color: white;
 }
 
-.filter-container button[aria-pressed="true"]:hover {
-    background-color: whitesmoke;
-    border: 1px solid #141414;
-    color: #141414;
-    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.2);
+.filter-container button[aria-pressed="true"]:hover,
+.filter-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.15);
 
 }
 

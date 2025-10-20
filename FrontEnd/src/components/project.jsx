@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './style/project.css';
-import Dropdown from './fitur/dropdown';
 import ProjectUser from './adminPage/projectUser';
+import { Link } from 'react-router-dom';
 
 function Project() {
-    const [activeCategory, setActiveCategory] = useState("all");
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
@@ -16,39 +15,39 @@ function Project() {
 
     return (
         <section className="section">
-            <div className="flex justify-beetween align-item-center">
-                <h2 className='fade-in'>Project</h2>
-                <Dropdown
-                    label="Filter"
-                    className='fade-in'
-                    contentClassName="drop-absolute"
-                    icon={<i className='bi bi-sliders'></i>} //ganti icon
-                >
-                    <button
-                        onClick={() => setActiveCategory("all")}
-                        className='project-drop'
-                    >All</button>
-                    <button
-                        onClick={() => setActiveCategory("pkl")}
-                        className='project-drop'
-                    >PKL</button>
-                    <button
-                        onClick={() => setActiveCategory("non-pkl")}
-                        className='project-drop'
-                    >Non Pkl</button>
-                </Dropdown>
-            </div>
-
-            <div className="project-container flex  ">
+            <h2>Projects</h2>
+            <div className="project-subcontainer">
 
                 {projects.length > 0 ? (
-                    projects.map(project => (
-                        <ProjectUser key={project._id} project={project}/>
+                    // show only up to 4 projects; mark the 4th with class 'last-project'
+                    projects.slice(0, 4).map((project, idx) => (
+                        <div 
+                            key={project._id} 
+                            className={
+                                idx === 4 ? 
+                                'last-project flex justify-center align-item-center' : 
+                                'regular flex justify-center align-item-center'
+                            }>
+                            <ProjectUser project={project} />
+                        </div>
                     ))
-                ): (
+                ) : (
                     <p>Tidak Ada Project</p>
                 )}
 
+                <Link to="/projectPage" className="see-more flex align-item-center justify-center">
+                    <div className="flex blue-button">
+                        <p>See More</p>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="16" 
+                            fill="currentColor" 
+                            className="bi bi-chevron-right" 
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </Link>
             </div>
         </section>
     );
