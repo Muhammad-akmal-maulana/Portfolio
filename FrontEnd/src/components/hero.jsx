@@ -1,13 +1,13 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import React, { useState, useRef, useEffect } from 'react';
 import './style/hero.css';
-import AfterHero from '../afterHero';
+import AfterHero from '../pages/afterHero';
 
 function HeroSection() {
 
     return (
         <div id='hero-section'>
-            <Parallax pages={1.66} style={{ top: '0', left: '0' }}>
+            <Parallax pages={1.658} style={{ top: '0', left: '0' }}>
                 <ParallaxLayer offset={0} speed={1.5}>
                     {/* nanti gambar bakal di jadiin background image */}
                     <div className="parallax" id='sky'></div>

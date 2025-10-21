@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import FadeInAnimation from './components/fitur/fadeIn';
-import Aboutme from './components/aboutMe';
-import Skill from './components/skill';
-import Project from './components/project';
-import ContactMe from './components/contactMe';
+import FadeInAnimation from '../components/fitur/fadeIn';
+import Aboutme from '../components/aboutMe';
+import Skill from '../components/skill';
+import Project from '../components/project';
+import Footer from '../components/footer';
 
 function AfterHero() {
     return (
@@ -12,7 +12,7 @@ function AfterHero() {
                 <Aboutme />
                 <Skill />
                 <Project />
-                <ContactMe />
+                <Footer />
             </FadeInAnimation>
         </div>
     );

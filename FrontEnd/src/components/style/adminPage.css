@@ -180,19 +180,16 @@
 .filter-container button {
     padding: 5px 15px;
     border-radius: 5px;
-    border: 1px solid #141414;
     margin: 0 5px;
 }
 
-.filter-container button[aria-pressed="true"] {
-    background-color: #141414;
-    color: white;
+.filter-container button[aria-pressed="true"] p {
+    border-bottom: 2px solid #141414;
 }
 
 .filter-container button[aria-pressed="true"]:hover,
 .filter-container button:hover {
     transform: scale(1.05);
-    box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.15);
 
 }
 

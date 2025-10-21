@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
-import CreateProject from '../components/adminPage/createProject';
-import EditProject from '../components/adminPage/editProject';
+import CreateProject from '../components/projects/createProject';
+import EditProject from '../components/projects/editProject';
 import '../components/style/adminPage.css';
 
 function AdminPage() {

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import './style/project.css';
-import ProjectUser from './adminPage/projectUser';
+import ProjectUser from './projects/projectUser';
 import { Link } from 'react-router-dom';
 
 function Project() {
     const [projects, setProjects] = useState([]);
+    const lastProjectRef = useRef(null);
+    const [lastProjectHeight, setLastProjectHeight] = useState(0);
 
     useEffect(() => {
         fetch("http://localhost:5000/api/project")
@@ -13,21 +15,56 @@ function Project() {
             .catch(err => console.error(err));
     }, []);
 
+    useLayoutEffect(() => {
+        const el = lastProjectRef.current;
+        if (!el) return;
+
+        const getTargetHeight = () => {
+            const rect = el.getBoundingClientRect();
+            return Math.ceil(rect.height);
+        };
+
+        const update = () => {
+            const h = getTargetHeight();
+            setLastProjectHeight(h);
+            console.debug('[Project] measured last-project height:', h);
+        };
+
+        update();
+
+        let ro;
+        if (typeof ResizeObserver !== 'undefined') {
+            ro = new ResizeObserver(update);
+            ro.observe(el);
+            const inner = el.querySelector('.project-card');
+            if (inner) ro.observe(inner);
+        } else {
+            window.addEventListener('resize', update);
+        }
+
+        return () => {
+            if (ro) ro.disconnect();
+            else window.removeEventListener('resize', update);
+        };
+    }, [projects]);
+
     return (
-        <section className="section">
-            <h2>Projects</h2>
+        <section className="section project-section">
+            <h1>Projects</h1>
             <div className="project-subcontainer">
 
                 {projects.length > 0 ? (
-                    // show only up to 4 projects; mark the 4th with class 'last-project'
+                    // 4 adalah jumlah cardnya
                     projects.slice(0, 4).map((project, idx) => (
                         <div 
-                            key={project._id} 
+                            key={project._id}
+                            ref={idx === 3 ? lastProjectRef : null}
                             className={
-                                idx === 4 ? 
+                                idx === 3 ? 
                                 'last-project flex justify-center align-item-center' : 
                                 'regular flex justify-center align-item-center'
-                            }>
+                            }
+                            >
                             <ProjectUser project={project} />
                         </div>
                     ))
@@ -35,7 +72,10 @@ function Project() {
                     <p>Tidak Ada Project</p>
                 )}
 
-                <Link to="/projectPage" className="see-more flex align-item-center justify-center">
+                <Link 
+                    to="/projectPage" 
+                    className="see-more flex align-item-center justify-center"
+                >
                     <div className="flex blue-button">
                         <p>See More</p>
                         <svg 

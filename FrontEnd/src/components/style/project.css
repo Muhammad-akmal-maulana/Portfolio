@@ -1,6 +1,15 @@
 .project-section {
+    margin-bottom: 20px;
+}
+
+.project-section {
     position: relative;
     z-index: 2;
+}
+
+.project-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .drop-trigger-project {
@@ -17,28 +26,47 @@
 
 .project-subcontainer {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 25px;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+/* make this the positioned ancestor for the absolute .see-more */
+.project-subcontainer { position: relative; }
+
+/* card */
+
+.project-subcontainer .last-project,
+.project-subcontainer .regular {
+    background-image: linear-gradient(to right top, #f7f7f7, #f4f4f4, #efefef, #eaeaea);
 }
 
 .project-subcontainer .see-more,
 .project-subcontainer .last-project,
 .project-subcontainer .regular {
-    background-color: white;
-    width: 25% !important;
-    height: 394px !important;
     border-radius: 5px;
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15);
+    width: 25% !important;
+    padding: 10px 0;
 }
 
 .project-subcontainer .see-more {
+    background-color: white;
     background-color: rgba(255, 522, 255, 0.4) !important;
     position: absolute;
-    width: 22% !important;
-    right: 3%;
+    width: 23.5% !important;
+    right: 0;
+    top: 0; 
+    bottom: 0; 
     backdrop-filter: blur(2px);
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.project-subcontainer .see-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-subcontainer .see-more:hover {
@@ -49,7 +77,7 @@
 .project-subcontainer .see-more:hover div,
 .project-subcontainer .last-project:hover,
 .project-subcontainer .regular:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .project-subcontainer .see-more div {
@@ -66,8 +94,25 @@
     margin: 0 0 -2px;
 }
 
-/* card */
 .project-subcontainer .project-card img {
     max-width: 280px;
     border-radius: 3px;
+}
+
+.project-subcontainer .last-project,
+.project-subcontainer .regular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-subcontainer .last-project .project-card,
+.project-subcontainer .regular .project-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-subcontainer .sub-project-card {
+    padding-top: 10px;
 }

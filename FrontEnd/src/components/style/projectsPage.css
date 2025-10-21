@@ -30,7 +30,7 @@ section.projects-page {
 }
 
 /* project User */
-.project-card {
+.projects-page .project-card {
     display: inline-block;
     width: 100%;
     margin-bottom: 20px;
@@ -46,15 +46,15 @@ section.projects-page {
     box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15);
 }
 
-.project-card:hover {
+.projects-page .project-card:hover {
     transform: scale(1.02);
 }
 
-.project-card:hover .sub-project-card {
+.projects-page .project-card:hover .sub-project-card {
     opacity: 1;
 }
 
-.project-card .sub-project-card {
+.projects-page .project-card .sub-project-card {
     background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     position: relative;
     z-index: 2;

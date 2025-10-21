@@ -31,7 +31,6 @@ createRoot(document.getElementById('root')).render(
         />
 
         <Route path="/projectPage" element={<ProjectsPage />} />
-        <Route path="/project" element={<Project />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

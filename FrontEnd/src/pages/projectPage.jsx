@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../components/style/projectsPage.css';
-import ProjectUser from '../components/adminPage/projectUser';
+import ProjectUser from '../components/projects/projectUser';
 import { Link } from 'react-router-dom';
 
 function ProjectsPage() {
@@ -26,13 +26,22 @@ function ProjectsPage() {
                 <h1>Project</h1>
 
                 <div className="filter-container flex">
-                    <button onClick={() => setFilter('pkl')} aria-pressed={filter === 'pkl'}>PKL</button>
-                    <button onClick={() => setFilter('non-pkl')} aria-pressed={filter === 'non-pkl'}>Non PKL</button>
-                    <button onClick={() => setFilter('all')} aria-pressed={filter === 'all'}>All</button>
+                    <button 
+                        onClick={() => setFilter('pkl')} 
+                        aria-pressed={filter === 'pkl'}
+                    ><p>PKL</p></button>
+                    <button 
+                        onClick={() => setFilter('non-pkl')} 
+                        aria-pressed={filter === 'non-pkl'}
+                    ><p>Non PKL</p></button>
+                    <button 
+                        onClick={() => setFilter('all')} 
+                        aria-pressed={filter === 'all'}
+                    ><p>All</p></button>
                 </div>
                 
                 <Link
-                    to='/Project'
+                    to='/'
                     className='red-button back flex align-item-center'
                 >
                     <svg

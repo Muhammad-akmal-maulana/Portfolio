@@ -1,0 +1,127 @@
+.footer {
+    background-color: rgb(255, 255, 255) !important;
+    margin-top: 100px;
+    box-shadow: -2px 0 10px 0 rgba(0, 0, 0, 0.2);
+    padding-bottom: 100px;
+}
+
+/* footer title */
+.footer .footer-title {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+}
+
+.footer .corner-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    height: 112px;
+}
+
+.footer .corner-square {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 2px solid #4B6EFF;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.footer .corner-square.top-left {
+    top: -6px;
+    left: -6px;
+}
+
+.footer .corner-square.top-right {
+    top: -6px;
+    right: -6px;
+}
+
+.footer .corner-square.bottom-left {
+    bottom: -6px;
+    left: -6px;
+}
+
+.footer .corner-square.bottom-right {
+    bottom: -6px;
+    right: -6px;
+}
+
+.footer .corner-square.mid-top {
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer .corner-square.mid-bottom {
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer .corner-square.mid-left {
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer .corner-square.mid-right {
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer .footer-title h2 {
+    font-family: "Anton", sans-serif;
+    font-weight: 100;
+    font-size: 100px;
+    margin: 0;
+    line-height: 1;
+    display: inline-block;
+    padding: 4px 12px;
+    border: 2px solid #4B6EFF;
+    box-sizing: border-box;
+}
+
+.footer .footer-title .corner-square {
+    border: 2px solid #4B6EFF;
+    background-color: #ffffff;
+    width: 12px;
+    height: 12px;
+}
+/* end of title */
+
+.footer-2 {
+    margin-right: 10px;
+}
+
+.footer p.contact-title{
+    margin: 0 0 5px;
+    font-weight: 650;
+    font-size: 20px;
+}
+
+.footer p.contact-title.tengah{
+    margin: 10px 0 5px;
+}
+
+.footer a > p {
+    margin: 0 0 0 5px ;
+}
+
+.footer a {
+    margin-bottom: 3px;
+    color: rgb(82, 82, 82);
+    cursor: pointer;
+}
+
+.footer .isi {
+    color: rgb(82, 82, 82);
+    margin: 0 0 3px;
+}
+
+.footer a:hover {
+    color: #141414;
+    transform: scale(1.05);
+}
