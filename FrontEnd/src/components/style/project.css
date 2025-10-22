@@ -1,5 +1,5 @@
 .project-section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .project-section {
@@ -9,7 +9,12 @@
 
 .project-section h1 {
     text-align: center;
-    margin-bottom: 20px;
+}
+
+.project-section p.fade-in {
+    text-align: center;
+    margin: 0 0 40px;
+    color: rgb(107, 107, 107);
 }
 
 .drop-trigger-project {

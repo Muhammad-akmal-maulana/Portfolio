@@ -50,8 +50,9 @@ function Project() {
 
     return (
         <section className="section project-section">
-            <h1>Projects</h1>
-            <div className="project-subcontainer">
+            <h1 className='fade-in'>Projects</h1>
+            <p className='fade-in'>Project Yang Saya Kerjakan Semalama Waktu PKL</p>
+            <div className="project-subcontainer fade-in">
 
                 {projects.length > 0 ? (
                     // 4 adalah jumlah cardnya

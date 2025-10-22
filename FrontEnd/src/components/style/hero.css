@@ -1,30 +1,68 @@
-/* parallax background */
-.parallax-wrapper .parallax {
-    height: 100vh;
+boody {
+    perspective: 1px;
+    transform-style: preserve-3d;
 }
 
-.parallax-wrapper {
-    display: block;
-    position: relative;
+.afterhero {
+    margin-top: -10px;
+}
+
+/* parallax background */
+section#hero-section {
+    width: 100%;
+    min-width: 120vh;
+    height: 100vh;
+    padding: 0;
     overflow: hidden;
 }
 
 .parallax {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    will-change: transform;
+}
+
+.parallax, .hero-section {
     position: absolute;
-    background-size: cover;      
-    background-position: bottom; 
-    background-repeat: no-repeat;
-    width: 100vw;                
-    height: 100vh;                
-    position: absolute;          
+    top: 0;
     bottom: 0;
     left: 0;
+    right: 0;
+    transition: transform 0.05s linear;
+}
+
+/* grass part */
+#front {
+    z-index: 5;
+}
+
+#middle {
+    z-index: 3;
+}
+
+#back {
+    z-index: 2;
+}
+
+#sky {
+    z-index: 1;
+    top: auto;
+    bottom: 0;
+}
+
+#sky1 {
+    z-index: 0;
+    top: auto;
+    bottom: 0;
 }
 
 /* hero section */
 .hero-section {
     padding-top: 300px;
     color: white;
+    position: relative;
+    z-index: 4;
 }
 
 .hero-section h1 {
@@ -86,6 +124,10 @@
     
     #sky {
         background-image: url('/parallax-asset/desktop-1365x647/background.png');
+    }
+    
+    #sky1 {
+        background-image: url('/parallax-asset/desktop-1365x647/background.jpg');
     }
 
 }
