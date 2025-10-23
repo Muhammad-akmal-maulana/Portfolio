@@ -49,7 +49,7 @@ function Project() {
     }, [projects]);
 
     return (
-        <section className="section project-section">
+        <section className="section project-section" id='project-page'>
             <h1 className='fade-in'>Projects</h1>
             <p className='fade-in'>Project Yang Saya Kerjakan Semalama Waktu PKL</p>
             <div className="project-subcontainer fade-in">

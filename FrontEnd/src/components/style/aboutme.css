@@ -2,8 +2,8 @@
     display: flex;
     margin-top: 10px;
     justify-content: space-between;
-    gap: 190px;
     align-items: center;
+    padding-bottom: 20px;
 }
 
 .aboutme-container p {

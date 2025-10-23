@@ -36,11 +36,21 @@ function LoginPage() {
     };
 
     return (
-        <div className='login-body flex justify-center align-item-center'>
-            <div className="login-sub-body"></div>
-            <div className="login-container flex align-item-center">
+        <div className='login-body'>
+            <div className="login-sub-body"></div> {/* Background seharusnya bisa pakek psuedo element :( */}
+
+            <div className="login-container">
+
                 <div className="image-container">
                     <div className="left-image"></div>
+                    <div className="white-grass-container">
+                        <img 
+                            src="/random-img/white-frontGrass.svg" 
+                            alt="whitegrass" 
+                            className="white-grass" 
+                        />
+                        <div className="padding-bawah"></div>
+                    </div>
                 </div>
                 <div className="sub-login">
                     <p className='login-title'>Login</p>
@@ -65,7 +75,7 @@ function LoginPage() {
                                 autoComplete='off'/>
                         </div>
 
-                        <div className="password flex align-item-center">
+                        <div className="password flex align-item-center justify-beetween">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="18"
@@ -111,6 +121,9 @@ function LoginPage() {
                         </div>
 
                         <button type="submit" className='login-button blue-button'>Login</button>
+                        <a href="/" className='flex justify-center'>
+                            <p>Nahh I'm <span>not an admin</span></p>
+                        </a>
                     </form>
                 </div>
             </div>

@@ -22,7 +22,7 @@ function HeroSection() {
                 front.style.transform = `translateY(${scrollY * 0.005}px)`;    // paling lambat
             }
 
-            const ySky = Math.min(scrollY * 0.6, 50); // mencegah sky bergerak berlebihan dan menyebabkan celah putih diatas
+            const ySky = Math.min(scrollY * 0.6, 0); // mencegah sky bergerak berlebihan dan menyebabkan celah putih diatas
             sky1.style.transform = `translateY(${ySky}px)`;
         };
 
@@ -36,7 +36,7 @@ function HeroSection() {
                 <div className="parallax">
                     <div className="parallax" id="front"></div>
                     <div className="parallax" id="middle"></div>
-                    <section className="hero-section" id='parallax-text'>
+                    <section className="hero-container" id='parallax-text'>
                         <p>Hi, Im</p>
                         <h1>
                             Muhammad Akmal <br />

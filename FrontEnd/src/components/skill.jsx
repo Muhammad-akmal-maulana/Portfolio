@@ -6,7 +6,7 @@ import FadeInAnimation from './fitur/fadeIn';
 function Skill() {
 
     return (
-        <section className='skill-section section'>
+        <section className='skill-section section' id='skill-page'>
             <h1 className='fade-in'>Skill</h1>
             <p className='fade-in'>Kemampuan Kemampuan Yang Saya Kuasai</p>
 

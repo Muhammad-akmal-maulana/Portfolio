@@ -3,7 +3,7 @@ import './style/footer.css';
 
 function Footer() {
     return (
-        <section className='section footer flex justify-beetween'>
+        <section className='section footer flex justify-beetween' id='footer-page'>
             <div className="footer-title">
                 <h2 className='title-contact'>
                     Contact Me

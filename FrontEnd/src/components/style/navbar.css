@@ -2,30 +2,88 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 3% 0 3%;
+    margin: 15px 3% 0 3%;
     position: fixed;
-    top: 10;
     right: 0;
     left: 0;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
     padding-left: 30px;
     border-radius: 50px;
-    z-index: 9999;
+    z-index: 99999;
+    padding: 0 30px;
 }
 
-h2 {
-    margin: 20px 0;
+.footer-buttom {
+    border: 1px solid rgb(133, 133, 133);
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
-nav i {
-    display: none;
+.footer-buttom:hover {
+    transform: scale(1.05);
+    font-weight: 600;
 }
 
-.link-container a {
+.navbar a>h1 {
+    cursor: pointer;
+}
+
+.navbar a>h1:hover{
+    transform: scale(1.01);
+}
+
+nav .link-container a {
     padding: 0 40px 0 40px;
 }
 
-.link-container a:hover {
-    font-weight: bold;
+nav .link-container a:hover, .link-container.burger-container a:hover {
+    transform: scale(1.05);
+    font-weight: 600;
+}
+
+nav .burger, i.burger {
+    display: none;
+}    
+
+/* navbar android */
+@media (max-width: 500px) {
+    
+    nav .burger button {
+        position: relative;
+    }    
+    
+    nav .burger, i.burger {
+        display: block;
+    }    
+    
+    nav .non-burger, nav .footer-buttom {
+        display: none;
+    }
+}
+
+i.burger {
+    font-size: 25px;
+}
+
+.burger-container {
+    margin: 0 3%;
+    padding: 84px 0 10px;
+    top: 16px;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.burger-container a {
+    padding: 20px 0;
 }

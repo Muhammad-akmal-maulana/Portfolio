@@ -43,7 +43,7 @@ function Aboutme() {
 
 
     return (
-        <section className='aboutme-container'>
+        <section className='aboutme-container' id='aboutme'>
             <div className='sub-aboutme1'>
                 <div className="">
                     <h2 className="fade-in">ABOUT ME</h2>

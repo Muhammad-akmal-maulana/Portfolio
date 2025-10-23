@@ -179,10 +179,28 @@ function AdminPage() {
                         <div className="filter-container">
                             {projects.length > 0 ? (
                                 <>
-                                    <button onClick={() => setFilter('pkl')} aria-pressed={filter === 'pkl'}>PKL</button>
-                                    <button onClick={() => setFilter('non-pkl')} aria-pressed={filter === 'non-pkl'}>Non PKL</button>
-                                    <button onClick={() => setFilter('all')} aria-pressed={filter === 'all'}>All</button>
-                                    <button onClick={handleCreateClick}>+ New Project</button>
+                                    <button 
+                                        onClick={() => setFilter('pkl')} 
+                                        aria-pressed={filter === 'pkl'}
+                                    >
+                                        <p>PKL</p>
+                                    </button>
+                                    <button 
+                                        onClick={() => setFilter('non-pkl')} 
+                                        aria-pressed={filter === 'non-pkl'}
+                                    > 
+                                        <p>Non PKL</p>
+                                    </button>
+                                    <button 
+                                        onClick={() => setFilter('all')} 
+                                        aria-pressed={filter === 'all'}
+                                    >
+                                        <p>All</p>
+                                    </button>
+                                    <button 
+                                        onClick={handleCreateClick}
+                                        className='blue-button'
+                                    >+ New Project</button>
                                 </>
                             ) : null}
                         </div>
