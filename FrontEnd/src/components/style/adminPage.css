@@ -1,6 +1,9 @@
 .admin-section {
     margin-top: -40px;
 }
+.admin-section p {
+    margin: 0;
+}
 
 .admin-title {
     margin-bottom: 30px;
