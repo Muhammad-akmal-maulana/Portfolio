@@ -140,16 +140,17 @@ h1 {
 }
 
 /* width 1262 */
-@media (max-width: 1263px) {
+@media (max-width: 1336px) {
     #middle {
         background-image: url('/parallax-asset/desktop-1365x647/middle-grass.png');
-        background-position: right;
+        background-position: right -62px center;
+    }
+
+    section#hero-section {
+        min-width: 100vw;
     }
 }
 
 /* 700px */
 @media (max-width: 800px) {
-    section#hero-section {
-        min-width: 100vw;
-    }
 }

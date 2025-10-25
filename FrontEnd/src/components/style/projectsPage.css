@@ -55,11 +55,11 @@ section.projects-page {
 }
 
 .projects-page .project-card .sub-project-card {
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(255, 255, 255, 0));
     position: relative;
     z-index: 2;
-    margin-top: -88px;
-    padding: 20px 10px 8px;
+    margin-top: -119px;
+    padding: 64px 10px 8px;
     opacity: 0;
 }
 
@@ -79,7 +79,7 @@ section.projects-page {
     border-radius: 3px;
 }
 
-.project-card .kategori {
+.projectPage-container .kategori {
     margin: 0;
     color: white;
 }
@@ -95,7 +95,12 @@ section.projects-page {
     margin: 0;
 }
 
+.project-card .sub-project-card {
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
 .project-card .deskripsi {
-    color: gray;
+    color: rgb(223, 223, 223);
     border: none;
 }

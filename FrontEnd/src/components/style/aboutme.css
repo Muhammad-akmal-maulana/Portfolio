@@ -8,6 +8,7 @@
 
 .aboutme-container p {
     margin-bottom: 50px;
+    width: 80%;
 }
 
 .sub-aboutme1 {
@@ -26,7 +27,7 @@
     background-image: linear-gradient(to right top, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
     color: white;
     width: fit-content;
-    padding: 5px 20px;
+    padding: 5px 11px 5px 15px;
     border-radius: 50px;
     position: absolute;
     margin: -83px 0 0 274px;
@@ -44,20 +45,22 @@
 .typing-anim {
     display: inline-block;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
     vertical-align: middle;
-    height: 25px;
-
+    height: auto;
+    line-height: 1;
+    font-size: inherit;
 }
 
 .cursor-blink {
     display: inline-block;
     width: 2px;
-    height: 15px;
-    margin-left: 2px;
+    height: 1em;
+    margin-left: 10px;
     vertical-align: middle;
     animation: blink 0.8s steps(1) infinite;
     border-radius: 1px;
+    background-color: currentColor;
 }
 
 @keyframes blink {
@@ -83,4 +86,10 @@
     background-size: cover;
     background-position: center;
     background-image: url('/aboutme-img/foto-gweh.svg');
+}
+
+@media screen and (max-width: 762px) {
+    .aboutme-container {
+        display: block;
+    }
 }

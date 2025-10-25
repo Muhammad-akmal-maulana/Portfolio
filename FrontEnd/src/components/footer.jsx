@@ -3,8 +3,8 @@ import './style/footer.css';
 
 function Footer() {
     return (
-        <section className='section footer flex justify-beetween' id='footer-page'>
-            <div className="footer-title">
+        <section className='section footer flex justify-beetween fade-in' id='footer-page'>
+            <div className="footer-title  fade-in">
                 <h2 className='title-contact'>
                     Contact Me
                     <div className="corner-container">
@@ -20,12 +20,12 @@ function Footer() {
                 </h2>
             </div>
 
-            <div className="footer-1">
+            <div className="footer-1 fade-in">
                 <p className='contact-title'>Let’s Work Together</p>
                 <p className='isi'>Ayo buat sesuatu yang keren bersama</p>
                 <p className='isi'>Hubungi dari Contact yang tertera</p>
             </div>
-            <div className="footer-2">
+            <div className="footer-2 fade-in">
                 <p className='contact-title'>Contact</p>
                 <a href="" className='flex align-item-center'>
                     <svg
