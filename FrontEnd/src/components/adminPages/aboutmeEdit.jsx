@@ -14,6 +14,7 @@ function AboutmeEdit() {
     // dropdown
     const [show, setShow] = useState(false);
     const dropdownRef = useRef(null);
+    const [imageLoading, setImageLoading] = useState(true); //loading
 
     useEffect(() => {
         async function fetchAbout() {
@@ -132,88 +133,148 @@ function AboutmeEdit() {
     };
 
     return (
-        <div ref={dropdownRef}>
-            <section className='section'>
-                <button onClick={() => setShow(!show)}>edit</button>
+        <div
+            ref={dropdownRef}
+            className='edit-about-all'
+        >
+            <section className='section aboutme-container'>
+                <div className="sub-aboutme1">
+                    <div className="">
+                        <h2>ABOUT ME</h2>
+                        <div className="">
+                            <div className="flex align-item-center">
+                                <button onClick={() => setShow(!show)}> 
+                                    <span>{nama} </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='deskripsi-container flex align-item-center justify-center'>
+                        <button 
+                            onClick={() => setShow(!show)}
+                        >Edit Deskripsi</button>
+                        <p>
+                            {deskripsi?.split('\n').map((line, index) => (
+                                <React.Fragment key={index}>
+                                    {line}
+                                    <br />
+                                </React.Fragment>
+                            ))}
+                        </p>
+                    </div>
+                </div>
+
+                <div className="sub-aboutme2">
+                    
+                    {about?.image ? (
+                        <img
+                            src={`http://localhost:5000/uploads/${about.image}`}
+                            alt="About Me"
+                            className='person'
+                            onError={(e) => (e.target.style.display = 'none')}
+                        />
+                    ) : (
+                        <div>
+                            <p>Tidak ada gambar</p>
+                        </div>
+                    )}
+                </div>
             </section>
 
             {show && (
-            <section className='aboutmeEdit-section'>
+                <section className='aboutmeEdit-section'>
 
-                <div className="about-header blue-button">
-                    <div className='about-title flex justify-beetween align-item-center'>
-                        <p>Edit About Me</p>
-                        <button onClick={() => setShow(false)}>
-                            <i class="bi bi-x-lg"></i>
-                        </button>
+                    <div className="about-header blue-button">
+                        <div className='about-title flex justify-beetween align-item-center'>
+                            <p>Edit About Me</p>
+                            <button onClick={() => setShow(false)}>
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </div>
+
+                        <form onSubmit={handleSubmit} className="flex align-item-center">
+                            <div className="sub-about1">
+
+                                <div>
+                                    <p className='top-label'>Typing Animation</p>
+                                    <input
+                                        type="text"
+                                        value={nama}
+                                        onChange={(e) => setNama(e.target.value)}
+                                        placeholder="Masukkan nama"
+                                        required
+                                    />
+                                </div>
+
+                                <div>
+                                    <p>Deskripsi</p>
+                                    <textarea
+                                        placeholder='Masukkan Deskripsi'
+                                        value={deskripsi}
+                                        onChange={(e) => setDeskripsi(e.target.value)}
+                                        rows={6}
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <button
+                                        type="submit"
+                                        className={isChanged ? 'blue-button' : 'gray-button'}
+                                        disabled={!isChanged}
+                                    >Update</button>
+                                </div>
+                            </div>
+
+                            <div className="sub-about2 flex align-item-center justify-center">
+
+                                <div className='about-image'>
+                                    {preview && (
+                                        <>
+                                            {imageLoading && <div className="loading">Loading...</div>}
+
+                                            <img
+                                                src={preview}
+                                                alt="preview"
+                                                onLoad={() => setImageLoading(false)}   // hilangkan loading saat gambar sudah tampil
+                                                onError={() => {
+                                                    setImageLoading(false);             // hilangkan loading juga jika error
+                                                    console.error('Gagal memuat gambar');
+                                                }}
+                                                style={{
+                                                    display: imageLoading ? 'none' : 'block',
+                                                }}
+                                            />
+                                        </>
+                                    )}
+
+                                    <input
+                                        id='aboutme-img'
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={(e) => {
+                                            setImageLoading(true); // setiap kali pilih gambar baru, tampilkan loading lagi
+                                            handleFileChange(e);
+                                        }}
+                                        ref={fileRef}
+                                    />
+                                </div>
+
+
+                                <div className='edit-gambar flex justify-center align-item-center'>
+                                    <label
+                                        htmlFor="aboutme-img"
+                                        className='blue-button'
+                                    >
+                                        Edit Gambar
+                                    </label>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="flex align-item-center">
-                        <div className="sub-about1">
-
-                            <div>
-                                <p className='top-label'>Typing Animation</p>
-                                <input
-                                    type="text"
-                                    value={nama}
-                                    onChange={(e) => setNama(e.target.value)}
-                                    placeholder="Masukkan nama"
-                                    required
-                                />
-                            </div>
-
-                            <div>
-                                <p>Deskripsi</p>
-                                <textarea
-                                    placeholder='Masukkan Deskripsi'
-                                    value={deskripsi}
-                                    onChange={(e) => setDeskripsi(e.target.value)}
-                                    rows={6}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <button
-                                    type="submit"
-                                    className={isChanged ? 'blue-button' : 'gray-button'}
-                                    disabled={!isChanged}
-                                >Update</button>
-                            </div>
-                        </div>
-
-                        <div className="sub-about2 flex align-item-center justify-center">
-
-                            <div className='about-image'>
-                                {preview && (
-                                    <img
-                                        src={preview}
-                                        alt="preview"
-                                    />
-                                )}
-
-                                <input
-                                    id='aboutme-img'
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={handleFileChange}
-                                    ref={fileRef}
-                                />
-                            </div>
-
-                            <div className={imageFile ? 'edit-gambar' : 'tambah-gambar'}>
-                                <label
-                                    htmlFor="aboutme-img"
-                                    className='blue-button'
-                                >
-                                    Edit Gambar
-                                </label>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-
-            </section>
+                </section>
             )}
         </div>
     );
