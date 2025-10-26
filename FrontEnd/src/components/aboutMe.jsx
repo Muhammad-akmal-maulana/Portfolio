@@ -47,6 +47,7 @@ function Aboutme() {
 
         return () => clearTimeout(timeoutId);
     }, [text, isDeleting, about]);
+    
 
     //ambil data
     useEffect(() => {

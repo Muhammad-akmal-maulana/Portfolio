@@ -28,7 +28,7 @@ function CreateProject({ onCreated, onCancel }) {
     }
 
     return (
-        <div>
+        <div className="create-project-container">
             <div className="admin-title flex justify-beetween align-item-center">
                 <h1>Buat Project Baru</h1>
                 <button 

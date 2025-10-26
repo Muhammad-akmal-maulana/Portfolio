@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
+import Aboutme from '../aboutMe';
+import '../style/editAboutme.css'
 
-function AboutmeEdit({ resetForm }) {
+function AboutmeEdit() {
     const [loading, setLoading] = useState(true);
     const [about, setAbout] = useState(null);
     const [nama, setNama] = useState('')
@@ -8,6 +10,10 @@ function AboutmeEdit({ resetForm }) {
     const [imageFile, setImageFile] = useState(null);
     const [preview, setPreview] = useState(null);
     const fileRef = useRef(null);
+    const [isChanged, setIsChanged] = useState(false); //mendeteksi perubahan
+    // dropdown
+    const [show, setShow] = useState(false);
+    const dropdownRef = useRef(null);
 
     useEffect(() => {
         async function fetchAbout() {
@@ -32,6 +38,19 @@ function AboutmeEdit({ resetForm }) {
         fetchAbout();
     }, []);
 
+    //deteksi perubahan data yang dibandingkan data awal
+    useEffect(() => {
+        if (!about) {
+            setIsChanged(!!nama || !!deskripsi || !!imageFile);
+            return;
+        }
+
+        const namaChanged = nama !== (about.nama || '');
+        const deskripsiChanged = deskripsi !== (about.deskripsi || '');
+        const imageChanged = !!imageFile; // jika ada file baru
+        setIsChanged(namaChanged || deskripsiChanged || imageChanged);
+    }, [nama, deskripsi, imageFile, about]);
+
     // preview gambar baru
     useEffect(() => {
         if (!imageFile) return;
@@ -39,6 +58,20 @@ function AboutmeEdit({ resetForm }) {
         setPreview(url);
         return () => URL.revokeObjectURL(url);
     }, [imageFile]);
+
+    // dropdown
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setShow(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     // handle perubahan file
     const handleFileChange = (e) => {
@@ -48,8 +81,9 @@ function AboutmeEdit({ resetForm }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!isChanged) return; //jika data tidak ada yang baru maka menolak update
         const form = new FormData();
-        // if creating new about (no existing about), require an image
+
         if (!about && !imageFile) {
             alert('Silakan pilih gambar sebelum menyimpan.');
             return;
@@ -81,16 +115,16 @@ function AboutmeEdit({ resetForm }) {
             const saved = await res.json();
             setAbout(saved);
 
-            // on success: keep form populated with saved data (do not reset fields)
             alert('Berhasil disimpan');
 
-            // reflect saved values back to the form so admin sees the stored record
             setNama(saved.nama || nama);
             setDeskripsi(saved.deskripsi || deskripsi);
             if (saved.image) {
                 setPreview(`http://localhost:5000/uploads/${saved.image}`);
             }
-            
+            setImageFile(null);
+            setIsChanged(false);
+
         } catch (err) {
             console.error(err);
             alert(err.message || 'Gagal menyimpan about me');
@@ -98,66 +132,90 @@ function AboutmeEdit({ resetForm }) {
     };
 
     return (
-        <section className='section'>
-            <div className="">
-                <h1>Edit About Me</h1>
-            </div>
+        <div ref={dropdownRef}>
+            <section className='section'>
+                <button onClick={() => setShow(!show)}>edit</button>
+            </section>
 
-            <form onSubmit={handleSubmit} className="">
-                <div>
-                    <label>Animasi Nama</label>
-                    <input
-                        type="text"
-                        value={nama}
-                        onChange={(e) => setNama(e.target.value)}
-                        placeholder="Masukkan nama"
-                        required
-                    />
-                </div>
+            {show && (
+            <section className='aboutmeEdit-section'>
 
-                <div>
-                    <label>Deskripsi</label>
-                    <textarea 
-                        placeholder='Masukkan Deskripsi'
-                        value={deskripsi} 
-                        onChange={(e) => setDeskripsi(e.target.value)} 
-                        rows={6} 
-                        required
-                    />
-                </div>
-
-                <div className="">
-                    {preview ? (
-                        <div>
-                            <img 
-                                src={preview} 
-                                alt="preview" 
-                                style={{ maxWidth: 240 }} 
-                            />
-                            <label htmlFor="aboutme-img">Edit Gambar</label>
-                        </div>
-                    ) : (
-                        <div>
-                            <label htmlFor="aboutme-img">Tambah Gambar</label>
-                        </div>
-                    )}
-
-                    <div>
-                        <input 
-                            id='aboutme-img'
-                            type="file" 
-                            accept="image/*" 
-                            onChange={handleFileChange} 
-                            ref={fileRef} 
-                        />
+                <div className="about-header blue-button">
+                    <div className='about-title flex justify-beetween align-item-center'>
+                        <p>Edit About Me</p>
+                        <button onClick={() => setShow(false)}>
+                            <i class="bi bi-x-lg"></i>
+                        </button>
                     </div>
+
+                    <form onSubmit={handleSubmit} className="flex align-item-center">
+                        <div className="sub-about1">
+
+                            <div>
+                                <p className='top-label'>Typing Animation</p>
+                                <input
+                                    type="text"
+                                    value={nama}
+                                    onChange={(e) => setNama(e.target.value)}
+                                    placeholder="Masukkan nama"
+                                    required
+                                />
+                            </div>
+
+                            <div>
+                                <p>Deskripsi</p>
+                                <textarea
+                                    placeholder='Masukkan Deskripsi'
+                                    value={deskripsi}
+                                    onChange={(e) => setDeskripsi(e.target.value)}
+                                    rows={6}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <button
+                                    type="submit"
+                                    className={isChanged ? 'blue-button' : 'gray-button'}
+                                    disabled={!isChanged}
+                                >Update</button>
+                            </div>
+                        </div>
+
+                        <div className="sub-about2 flex align-item-center justify-center">
+
+                            <div className='about-image'>
+                                {preview && (
+                                    <img
+                                        src={preview}
+                                        alt="preview"
+                                    />
+                                )}
+
+                                <input
+                                    id='aboutme-img'
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleFileChange}
+                                    ref={fileRef}
+                                />
+                            </div>
+
+                            <div className={imageFile ? 'edit-gambar' : 'tambah-gambar'}>
+                                <label
+                                    htmlFor="aboutme-img"
+                                    className='blue-button'
+                                >
+                                    Edit Gambar
+                                </label>
+                            </div>
+                        </div>
+
+                    </form>
                 </div>
 
-                <div>
-                    <button type="submit" className="blue-button">Simpan</button>
-                </div>
-            </form>
-        </section>
+            </section>
+            )}
+        </div>
     );
 }
 

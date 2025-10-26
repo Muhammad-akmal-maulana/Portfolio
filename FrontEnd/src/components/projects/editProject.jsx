@@ -30,7 +30,7 @@ function EditProject({ project, onCancel, onUpdated }) {
     }
 
     return (
-        <div>
+        <div className="create-project-container">
             <div className="admin-title flex justify-beetween align-item-center">
                 <h1>Edit Project</h1>
                 <button

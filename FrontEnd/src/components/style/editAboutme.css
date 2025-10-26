@@ -1,0 +1,103 @@
+.aboutmeEdit-section {
+    background-color: rgba(255, 255, 255, 0.267);
+    backdrop-filter: blur(3px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.aboutmeEdit-section .about-header {
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    border-radius: 10px;  
+}
+
+.aboutmeEdit-section .about-header .about-title {
+    padding: 15px;
+}
+
+.aboutmeEdit-section .about-header .about-title p {
+    margin: 0;
+}
+
+.aboutmeEdit-section .about-header .about-title button>i {
+    color: white;
+}
+
+.aboutmeEdit-section .about-header .about-title button:hover>i {
+    color: rgb(255, 61, 61);
+}
+
+.aboutmeEdit-section form {
+    background-color: white;
+    padding: 15px 18px;
+    color: black;
+}
+
+.aboutmeEdit-section button[type=submit] {
+    width: 100%;
+}
+
+.aboutmeEdit-section .gray-button {
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 5px 20px;
+    cursor: no-drop;
+    margin: 10px 0;
+}
+
+.aboutmeEdit-section p {
+    margin: 10px 0;
+}
+
+.aboutmeEdit-section p.top-label {
+    margin: 0 0 10px;
+}
+
+.aboutmeEdit-section .sub-about1 {
+    width: 100%;
+    margin-right: 15px;
+}
+
+.aboutmeEdit-section input[type=text],
+.aboutmeEdit-section textarea {
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    padding: 5px 8px;
+    width: 97%;
+}
+
+.aboutmeEdit-section textarea {
+    margin: 0;
+    height: 200px;
+    resize: none;
+}
+
+.aboutmeEdit-section .sub-about2 {
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.aboutmeEdit-section .about-image img {
+    width: 100%;
+}
+
+.aboutmeEdit-section .sub-about2 #aboutme-img {
+    opacity: 0 !important;
+    position: absolute;
+}
+
+.aboutmeEdit-section .edit-gambar, 
+.aboutmeEdit-section .tambah-gambar {
+    position: absolute;
+}
+
+.aboutmeEdit-section .sub-about2 label {
+    padding: 10px;
+}

@@ -42,7 +42,7 @@ function ProjectForm({ onSubmit, initialData = {}, resetForm }) {
     setImage(file || null);
     setFileName(file ? file.name : ""); // update displayed filename
   };
-  
+
   //reset form jika reset form berubah
   useEffect(() => {
     if (resetForm) {
@@ -52,31 +52,31 @@ function ProjectForm({ onSubmit, initialData = {}, resetForm }) {
       setImage(null);
       setPreview(null);
       setFileName("");
-      
+
       if (fileInputRef.current) fileInputRef.current.value = ""; // reset file input
     }
   }, [resetForm]);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const payload = {
       title: title.trim(),
       deskripsi: deskripsi.trim(),
       kategori,
-      image, 
+      image,
     };
-    
+
     console.log("Submitting form payload:", payload);
     onSubmit && onSubmit(payload);
   };
-  
-    //dropdown
-    const handleSelect = (value) => {
-      setKategori(value);
-      setShow(false); // tutup dropdown setelah memilih
-    };
-  
+
+  //dropdown
+  const handleSelect = (value) => {
+    setKategori(value);
+    setShow(false); // tutup dropdown setelah memilih
+  };
+
   return (
     <form onSubmit={handleSubmit} className="project-form box-shadow flex justifiy-between align-item-center">
       <div className="img-container flex justifiy-center">
@@ -101,7 +101,7 @@ function ProjectForm({ onSubmit, initialData = {}, resetForm }) {
           onChange={handleFileChange}
           ref={fileInputRef}
           className="hidden-file-input"
-          required={!isEditing} 
+          required={!isEditing}
         />
         {preview && (
           <img

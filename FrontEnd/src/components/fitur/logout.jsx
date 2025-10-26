@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import '../style/popup.css'
 
 function LogoutPop({ show, onClose, onConfirm }) {
     const modalRef = useRef(null);
