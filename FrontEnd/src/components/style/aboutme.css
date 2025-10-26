@@ -27,7 +27,7 @@
     background-image: linear-gradient(to right top, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
     color: white;
     width: fit-content;
-    padding: 5px 11px 5px 15px;
+    padding: 8px 8px 8px 18px;
     border-radius: 50px;
     position: absolute;
     margin: -83px 0 0 274px;
@@ -56,7 +56,7 @@
     display: inline-block;
     width: 2px;
     height: 1em;
-    margin-left: 10px;
+    margin: 0 10px;
     vertical-align: middle;
     animation: blink 0.8s steps(1) infinite;
     border-radius: 1px;
@@ -82,10 +82,6 @@
 
 .person {
     width: 500px;
-    height: 420px;
-    background-size: cover;
-    background-position: center;
-    background-image: url('/aboutme-img/foto-gweh.svg');
 }
 
 @media screen and (max-width: 762px) {

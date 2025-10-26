@@ -1,0 +1,295 @@
+section.section.admin-project-section {
+    padding: 120px 3% 0 !important;
+}
+
+.admin-project-section p {
+    margin: 0;
+}
+
+.admin-title {
+    margin: 0 0 30px;
+}
+
+.admin-title h1 {
+    position: relative;
+    z-index: 0;
+}
+
+.admin-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: -3.5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, #4ea2ce, #248ac5, #0071bb, #0057ad, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
+    z-index: 0;
+    background-size: 200% 100%;
+    animation: underline 3s ease infinite;
+    transition: 1s ease-in;
+}
+
+.admin-title h1:hover::after {
+    width: 100%;
+}
+
+.close svg {
+    margin-bottom: -5px;
+}
+
+.close {
+    padding: 2px 5px !important;
+}
+
+/* popup delete */
+.blur-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+}
+
+.white-bg {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sub-popup p {
+    margin: 0;
+}
+
+.popup-container {
+    position: fixed;
+    /* Ensure popup overlays are above the bottombar (which uses z-index:9999) */
+    z-index: 10001;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+}
+
+.sub-popup-container {
+    position: relative;
+    z-index: 3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header {
+    padding: 10px 10px !important;
+    border-radius: 0!important;
+}
+
+.header button {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header svg {
+    margin-bottom: -6px;
+    color: white;
+}
+
+.header svg:hover {
+    color: red;
+}
+
+.header p {
+    padding-left: 5px;
+    margin: 0;
+}
+
+.sub-popup {
+    background-image: linear-gradient(to left bottom, #ffffff, rgb(233, 233, 233));
+    padding: 30px 30px 20px;
+    text-align: center;
+}
+
+.popup-image img {
+    width: 100px;
+    position: relative;
+    z-index: 4;
+}
+
+.popup-image svg {
+    position: relative;
+    color: red;
+    z-index: 5;
+    right: 30px;
+    top: 20px;
+}
+
+.middle-popup {
+    margin: 0 !important;
+}
+
+.popup-text p {
+    margin-right: 5px ;
+    text-align: left;
+    color: #494949;
+}
+
+.popup-text span {
+    font-weight: 600;
+    color: black;
+}
+
+.gif {
+    height: 170px;
+    width: 240px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-image: url('/random-img/omni-man-are-you-sure.gif');
+    background-size: cover;
+    background-position: top;
+    margin: 0 20px 15px 0;
+}
+
+
+.popup-text h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.popup-text {
+    margin-left: 15px;
+}
+
+.sub-logout > div.flex {
+    margin: 20px 0 10px;
+    gap: 20px;
+}
+
+.popbutton-container {
+    padding-top: 15px;
+}
+
+.logout, .stay {
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.stay {
+    color: #494949 !important;
+    border: 1px solid #494949;
+    margin: 0 10px !important;
+}
+
+.red-one button {
+    margin: 0 !important;
+}
+
+/* table dan lain lain */
+.project-image-admin {
+    max-width: 130px;
+    margin-top: 5px;
+}
+
+.filter-container button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.filter-container button[aria-pressed="true"] p {
+    border-bottom: 2px solid #141414;
+}
+
+.filter-container button[aria-pressed="true"]:hover,
+.filter-container button:hover {
+    transform: scale(1.05);
+
+}
+
+.new-button-container {
+    margin-top: 16px;
+}
+
+.new-project-button2 {
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+table.table-admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 80px;
+}
+
+table.table-admin th,
+td {
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #bebebe;
+}
+
+table.table-admin td button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    color: white
+}
+
+table.table-admin td button:nth-child(1) {
+    margin-bottom: 0;
+}
+
+table.table-admin th {
+    background-color: #00008B;
+    color: white;
+    height: 30px;
+}
+
+.update {
+    background-image: linear-gradient(to right top, #033c9b, #0057ad, #0071bb, #248ac5, #4ea2ce);
+    margin: 10px !important;
+}
+
+.delete {
+    background-image: linear-gradient(to right top, #b80000, #c90400, #db0900, #ed0f00, #ff1400);
+}
+
+/* pagenation */
+.pagenation-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.pagenation {
+    margin: 0 3% 20px;
+    border-radius: 50px;
+    padding: 10px;
+    background-color: rgba(252, 252, 252, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgb(230, 230, 230);
+    z-index: 0;
+}
+
+/* next dan previous jika tidak aktif */
+.pagenation .previous.disabled,
+.pagenation .next.disabled,
+.pagenation .previous[disabled],
+.pagenation .next[disabled] {
+    color: #adadad;
+    cursor: default;
+    opacity: 0.6;
+}
+
+/* titik di tengah jika page lebih dari 3 */
+.dots {
+    padding: 6px 8px;
+    color: #adadad;;
+}
+
+/* page yang sedang dikunjungi */
+
+.page-number.active {
+    padding: 0 10px !important;
+    border-radius: 5px;
+}
+
+.pages {
+    margin: 0 10px;
+    gap: 5px;
+}

@@ -37,7 +37,7 @@ function Navbar() {
 
                     {/* burger for android */}
                     <button onClick={() => setShow(!show)}>
-                        <i class="bi bi-list burger"></i>
+                        <i className="bi bi-list burger"></i>
                     </button>
                 </div>
             </nav>

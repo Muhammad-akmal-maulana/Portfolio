@@ -38,7 +38,13 @@ nav .link-container a {
     padding: 0 40px 0 40px;
 }
 
-nav .link-container a:hover, .link-container.burger-container a:hover {
+nav .link-container button {
+    padding: 0 20px 0 20px;
+}
+
+nav .link-container a:hover, 
+nav .link-container button:hover, 
+.link-container.burger-container a:hover {
     transform: scale(1.05);
     font-weight: 600;
 }

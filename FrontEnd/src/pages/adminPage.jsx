@@ -1,14 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ProjectTable from '../components/adminPages/projectTable';
-import BottomBar from '../components/adminPages/bottombar';
-import '../components/style/adminPage.css';
+import NavAdmin from '../components/adminPages/navAdmin';
+import AboutmeEdit from '../components/adminPages/aboutmeEdit';
 
 function AdminPage() {
-    
+    const [activePage, setActivePage] = useState('aboutme'); // halaman default
+    const [showBottomBar, setShowBottomBar] = useState(true);
+
     return (
         <>
-            <BottomBar/>
-            <ProjectTable/>
+            {showBottomBar && <NavAdmin setActivePage={setActivePage} />}
+
+            <div>
+                {activePage === 'aboutme' && <AboutmeEdit />}
+                {activePage === 'project' && (
+                    <ProjectTable setShowBottomBar={setShowBottomBar} />
+                )}
+            </div>
         </>
     );
 }

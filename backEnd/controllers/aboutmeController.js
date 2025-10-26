@@ -1,4 +1,4 @@
-import Aboutme from "../models/aboutmeModel";
+import Aboutme from "../models/aboutmeModel.js";
 
 export const getAboutme = async (req, res) => {
 	try {
@@ -10,25 +10,27 @@ export const getAboutme = async (req, res) => {
 	}
 }
 
-export const createAboutme = async (req, res) => {
+export const updateAboutme = async (req, res) => {
 	try {
-		const { deskripsi, image } = req.body;
-		const created = await Aboutme.create({ deskripsi, image });
-		res.status(201).json(created);
+		const { id } = req.params;
+		if (req.file) req.body.image = req.file.filename;
+		const update = await Aboutme.findByIdAndUpdate(id, req.body, { new: true });
+		if (!update) return res.status(404).json({ message: 'Not found' });
+		
+		res.json(update);
 	} catch (err) {
 		console.error(err);
 		res.status(400).json({ message: 'Invalid data', error: err.message });
 	}
 }
 
-export const updateAboutme = async (req, res) => {
+export const createAboutme = async (req, res) => {
 	try {
-		const { id } = req.params;
-		const update = await Aboutme.findByIdAndUpdate(id, req.body, { new: true });
-		if (!update) return res.status(404).json({ message: 'Not found' });
-		res.json(update);
+		if (req.file) req.body.image = req.file.filename;
+		const created = await Aboutme.create(req.body);
+		res.status(201).json(created);
 	} catch (err) {
 		console.error(err);
-		res.status(400).json({ message: 'Invalid data', error: err.message });
+		res.status(400).json({ message: 'Gagal membuat aboutme', error: err.message });
 	}
 }

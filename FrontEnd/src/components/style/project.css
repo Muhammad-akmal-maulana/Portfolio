@@ -121,3 +121,12 @@
 .project-subcontainer .sub-project-card {
     padding-top: 10px;
 }
+
+
+.project-section .sub-project-card h3 {
+    color: #141414 !important;
+}
+
+.project-section .sub-project-card .deskripsi {
+    color: #7c7c7c !important;
+}

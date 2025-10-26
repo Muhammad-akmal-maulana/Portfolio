@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import path from "path";
+import { fileURLToPath } from 'url';
 import connectDB from './config/connectDB.js';
 import adminRoutes from './routes/adminRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
@@ -15,7 +16,12 @@ connectDB();
 app.use(cors());
 app.use(express.json()); // untuk parsing JSON
 app.use(express.urlencoded({ extended: true }));
-app.use("/uploads", express.static(path.join(process.cwd(), "uploads"))); // inputan gambar bakal ke folder uploads
+// Serve uploads relative to this file, not the current working directory.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const uploadsPath = path.join(__dirname, 'uploads');
+console.log('Serving uploads from', uploadsPath);
+app.use('/uploads', express.static(uploadsPath)); // inputan gambar bakal ke folder uploads
 
 //routes
 app.use('/api/admin', adminRoutes);
