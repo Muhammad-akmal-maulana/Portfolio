@@ -15,6 +15,10 @@ nav.navbar-android {
     border: 1px solid rgb(230, 230, 230);
 }
 
+nav p {
+    margin: 0;
+}
+
 .footer-buttom {
     border: 1px solid rgb(133, 133, 133);
     border-radius: 5px;
@@ -26,12 +30,20 @@ nav.navbar-android {
     font-weight: 600;
 }
 
-.navbar a>h1 {
+.navbar-android a>h1 {
     cursor: pointer;
 }
 
-.navbar a>h1:hover{
+.navbar-android a>h1:hover{
     transform: scale(1.01);
+}
+
+nav .logout::before {
+    content: '\f1c3';
+    font-family: "bootstrap-icons";
+    margin-right: 10px;
+    position: relative;
+    bottom: -2px;
 }
 
 nav .link-container a {

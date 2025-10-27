@@ -118,7 +118,7 @@ function SkillEdit() {
                 <div className="flex justify-beetween align-item-center">
                     <h1>Skill</h1>
                     <button
-                        className='blue-button'
+                        className='blue-button header-button'
                         onClick={() => setShow(!show)}
                     >New Skill</button>
                 </div>
@@ -126,16 +126,19 @@ function SkillEdit() {
                 <div className="skill-container flex">
                     {skills.map((skill) => (
                         <div className="sub-skill-container" key={skill._id}>
-                            <div className="skill">
-                                {skill.image && (
-                                    <img
-                                        src={`${UPLOADS_URL}/${encodeURIComponent(skill.image)}`}
-                                        alt={skill.title}
-                                        width="80"
-                                    />
-                                )}
-                                <p>{skill.title}</p>
-                                <div className="">
+                            <div className="outer-skill">
+                                <div className="skill">
+                                    {skill.image && (
+                                        <img
+                                            src={`${UPLOADS_URL}/${encodeURIComponent(skill.image)}`}
+                                            alt={skill.title}
+                                            width="80"
+                                        />
+                                    )}
+                                    <p>{skill.title}</p>
+
+                                </div>
+                                <div className="button-container">
                                     <button
                                         type="button"
                                         onClick={() => handleEdit(skill)}
@@ -151,18 +154,23 @@ function SkillEdit() {
                         </div>
                     ))}
 
-                    <button
-                        onClick={() => setShow(!show)}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="30"
-                            fill="currentColor"
-                            className="bi bi-plus-lg"
-                            viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
-                        </svg>
-                    </button>
+                    <div className="sub-skill-container">
+                        <div className="skill add-card-skill">
+                            <button
+                                onClick={() => setShow(!show)}
+                                className='tambah-skill-card'
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="30"
+                                    fill="currentColor"
+                                    className="bi bi-plus-lg"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -175,14 +183,20 @@ function SkillEdit() {
 
                         <div className="flex justify-beetween align-item-center">
                             <p>{editingId ? "Edit Skill" : "Tambah Skill"}</p>
-                            <button type="button" onClick={() => setShow(false)}>
+                            <button 
+                                type="button" 
+                                onClick={() => { 
+                                    resetForm(); 
+                                    setShow(false); 
+                                }}
+                            >
                                 <i className="bi bi-x-lg"></i>
                             </button>
                         </div>
 
                         <form onSubmit={handleSubmit}>
-                            <div>
-                                <p>Judul:</p>
+                            <div className='sub-form1'>
+                                <p>Judul</p>
                                 <input
                                     type="text"
                                     value={title}
@@ -190,28 +204,29 @@ function SkillEdit() {
                                     placeholder="Masukkan nama skill"
                                     required
                                 />
-                            </div>
-
-                            <div>
-                                <label
-                                    htmlFor='edit-skill'
-                                    className={editingId ? "edit-gambar blue-button" : "tambah-gambar blue-button"}
-                                >{editingId ? "Edit Gambar" : "Tambah Gambar"}</label>
+                                <p>{editingId ? "Edit Gambar" : "Tambah Gambar"}</p>
                                 <input
-                                    id='edit-skill'
                                     type="file"
                                     ref={fileRef}
                                     accept="image/*"
                                     onChange={handleImageChange}
                                 />
+
+                                <button type="submit" className='blue-button'>
+                                    {editingId ? "Update" : "Tambah"}
+                                </button>
+                                {editingId && <button className='red-button' type="button" onClick={resetForm}>Batal</button>}
                             </div>
 
-                            {preview && <img src={preview} alt="Preview" width="100" />}
+                            <div className="preview-container flex align-item-center justify-center">
+                                <div>
+                                    <div className="sub-preview">
+                                        {preview && <img src={preview} alt="Preview" width="100" />}
+                                        <p className="preview-title">{title ? title : 'Preview title'}</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <button type="submit">
-                                {editingId ? "Update Skill" : "Tambah Skill"}
-                            </button>
-                            {editingId && <button type="button" onClick={resetForm}>Batal</button>}
                         </form>
                     </div>
                 </section>

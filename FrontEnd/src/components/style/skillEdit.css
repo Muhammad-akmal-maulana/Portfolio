@@ -1,3 +1,61 @@
+/* skills */
+.edit-skill .skill-section .blue-button.header-button::before {
+    content: '\f64d';
+    font-family: "bootstrap-icons";
+    margin-right: 5px;
+    position: relative;
+    bottom: -2.5px;
+}
+
+.skill-section  {
+    position: relative;
+    overflow: visible;
+}
+
+.edit-skill .outer-skill,
+.edit-skill .skill {
+    position: relative;
+    z-index: 0;
+}
+
+.edit-skill .outer-skill:hover .button-container {
+    opacity: 1;
+}
+
+.edit-skill .outer-skill .button-container {
+    display: block !important;  
+    position: absolute;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.479);
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0 30px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.edit-skill .outer-skill .button-container button {
+    width: 90%;
+    margin: 10px 5% 0;
+}
+
+.edit-skill .skill-container {
+    width: 90%;
+    margin: 10px 5% 0;
+}
+
+.edit-skill .add-card-skill .tambah-skill-card {
+    background-color: rgb(226, 226, 226);
+    padding: 10px;
+    height: 50px;
+    border-radius: 100px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
 /* pop up edit */
 .edit-skill section.pop-edit-skill {
     position: fixed;
@@ -8,12 +66,20 @@
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(3px);
     z-index: 9999;
+    padding: 0 !important;
 }
 
 .edit-skill section.pop-edit-skill .header {
     padding: 0 !important;
     overflow: hidden;
     border-radius: 10px !important;
+    width: 50%;
+    box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.05);
+}
+
+.edit-skill section.pop-edit-skill .header>div.flex {
+    padding: 15px;
+    padding-right: 20px;
 }
 
 .edit-skill section.pop-edit-skill i {
@@ -25,9 +91,64 @@
 }
 
 .edit-skill section.pop-edit-skill form {
-    background-color: white;
+    background-image: linear-gradient(to right bottom, #ffffff, #fdfdfd, rgb(233, 233, 233));
+    padding: 15px 15px 20px;
+    display: flex;
+}
+
+.edit-skill section.pop-edit-skill form .sub-form1 {
+    width: 50%;
 }
 
 .edit-skill section.pop-edit-skill form p {
     color: black;
+    margin: 10px 0;
+}
+
+.edit-skill section.pop-edit-skill form .blue-button {
+    margin-top: 30px !important;
+}
+
+.edit-skill section.pop-edit-skill form input {
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    padding: 5px 8px;
+    width: 94.3%;
+}
+
+.edit-skill section.pop-edit-skill form button {
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 0 !important;
+    margin-top: 10px !important;
+}
+
+/* preview styling */
+.edit-skill section.pop-edit-skill .preview-container {
+    width: 50%;
+    margin-left: 15px;
+    border-radius: 5px;
+    border: 1px solid #bbbbbb;
+    background-color: rgb(226, 226, 226);
+}
+
+.edit-skill section.pop-edit-skill .preview-container>div {
+    height: 100%;
+    margin-top: 50%;
+}
+
+.edit-skill section.pop-edit-skill .preview-container p {
+    margin-bottom: 0;
+}
+
+.edit-skill section.pop-edit-skill .preview-container img {
+    width: 48px;
+}
+
+.edit-skill section.pop-edit-skill .preview-container .sub-preview {
+    background-color: white;  
+    border-radius: 5px;
+    padding: 20px 40px; 
+    text-align: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }

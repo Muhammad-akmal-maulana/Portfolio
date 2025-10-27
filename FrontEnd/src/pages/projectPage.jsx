@@ -21,25 +21,25 @@ function ProjectsPage() {
     }, []);
 
     return (
-        <section className="projects-page">
-            <div className="project-header flex justify-beetween align-item-center">
-                <h1>Project</h1>
+        <>
+            <nav className="navbar-android">
+                <h2>Project</h2>
 
                 <div className="filter-container flex">
-                    <button 
-                        onClick={() => setFilter('pkl')} 
+                    <button
+                        onClick={() => setFilter('pkl')}
                         aria-pressed={filter === 'pkl'}
                     ><p>PKL</p></button>
-                    <button 
-                        onClick={() => setFilter('non-pkl')} 
+                    <button
+                        onClick={() => setFilter('non-pkl')}
                         aria-pressed={filter === 'non-pkl'}
                     ><p>Non PKL</p></button>
-                    <button 
-                        onClick={() => setFilter('all')} 
+                    <button
+                        onClick={() => setFilter('all')}
                         aria-pressed={filter === 'all'}
                     ><p>All</p></button>
                 </div>
-                
+
                 <Link
                     to='/'
                     className='red-button back flex align-item-center'
@@ -55,22 +55,24 @@ function ProjectsPage() {
 
                     <p>Back</p>
                 </Link>
-            </div>
+            </nav>
+            <section className="projects-page">
 
 
-            <div className="projectPage-container">
-                {visibleProjects && visibleProjects.length > 0 ? (
-                    visibleProjects.map((project, idx) => (
-                        <ProjectUser
-                            key={project._id || project.id || idx}
-                            project={project}
-                        />
-                    ))
-                ) : (
-                    <p>Tidak Ada Project</p>
-                )}
-            </div>
-        </section>
+                <div className="projectPage-container">
+                    {visibleProjects && visibleProjects.length > 0 ? (
+                        visibleProjects.map((project, idx) => (
+                            <ProjectUser
+                                key={project._id || project.id || idx}
+                                project={project}
+                            />
+                        ))
+                    ) : (
+                        <p>Tidak Ada Project</p>
+                    )}
+                </div>
+            </section>
+        </>
     );
 }
 
