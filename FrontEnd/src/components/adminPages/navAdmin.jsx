@@ -18,6 +18,7 @@ function NavAdmin({ setActivePage }) {
             <div className="link-container">
                 <button onClick={() => setActivePage('aboutme')}>About Me</button>
                 <button onClick={() => setActivePage('project')}>Project</button>
+                <button onClick={() => setActivePage('skill')}>Skill</button>
             </div>
 
 

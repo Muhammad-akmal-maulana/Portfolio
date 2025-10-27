@@ -143,7 +143,7 @@ function AboutmeEdit() {
                         <h2>ABOUT ME</h2>
                         <div className="">
                             <div className="flex align-item-center">
-                                <button onClick={() => setShow(!show)}> 
+                                <button onClick={() => setShow(!show)}>
                                     <span>{nama} </span>
                                 </button>
                             </div>
@@ -151,8 +151,9 @@ function AboutmeEdit() {
                     </div>
 
                     <div className='deskripsi-container flex align-item-center justify-center'>
-                        <button 
+                        <button
                             onClick={() => setShow(!show)}
+                            className='blue-button'
                         >Edit Deskripsi</button>
                         <p>
                             {deskripsi?.split('\n').map((line, index) => (
@@ -165,8 +166,12 @@ function AboutmeEdit() {
                     </div>
                 </div>
 
-                <div className="sub-aboutme2">
-                    
+                <div className="sub-aboutme2 flex align-item-center justify-center">
+                    <button
+                        onClick={() => setShow(!show)}
+                        className='blue-button'
+                    >Edit Gambar</button>
+
                     {about?.image ? (
                         <img
                             src={`http://localhost:5000/uploads/${about.image}`}

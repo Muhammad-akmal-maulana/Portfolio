@@ -1,7 +1,7 @@
-.edit-about-all .aboutme-container {
-    padding: 120px 3%;
+.edit-about-all {
+    height: 100vh;
+    overflow: hidden;
 }
-
 .edit-about-all .aboutme-container .flex.align-item-center span {
     color: white;
 }
@@ -35,7 +35,6 @@
 
 .edit-about-all .aboutme-container .sub-aboutme1 .deskripsi-container button {
     position: absolute;
-    background-color: #ffffff;
     padding: 5px 35px 5px 10px;
     border-radius: 5px;
     opacity: 0;
@@ -46,14 +45,9 @@
     opacity: 1;
 }
 
-.edit-about-all .aboutme-container .sub-aboutme1 .deskripsi-container p {
-    padding: 5px 10px 10px;
-    border-radius: 5px;
-}
 
 .edit-about-all .aboutme-container .sub-aboutme1 .deskripsi-container:hover p {
     opacity: 0.3;
-    background-color: rgba(0, 0, 0, 0.301);
 }
 
 .edit-about-all .aboutme-container .sub-aboutme1 .deskripsi-container button::after {
@@ -63,6 +57,31 @@
     margin: 4px 0 0 10px;
 }
 
+/* edit image */
+.edit-about-all .aboutme-container .sub-aboutme2:hover img {
+    opacity: 0.5;
+}
+
+.edit-about-all .aboutme-container .sub-aboutme2:hover button {
+    opacity: 1;
+}
+
+.edit-about-all .aboutme-container .sub-aboutme2 button::after {
+    content: "\f4c9";
+    font-family: "bootstrap-icons";
+    position: absolute;
+    margin: 4px 0 0 10px;
+}
+
+.edit-about-all .aboutme-container .sub-aboutme2 button {
+    position: absolute;
+    padding: 5px 35px 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    z-index: 3;
+}
+
+/* pop up */
 .edit-about-all .sub-aboutme1 div>.flex {
     padding: 5px 10px !important;
     margin-right: 285px !important;
