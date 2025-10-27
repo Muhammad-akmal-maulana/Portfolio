@@ -3,10 +3,12 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import path from "path";
 import { fileURLToPath } from 'url';
+
 import connectDB from './config/connectDB.js';
 import adminRoutes from './routes/adminRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
 import aboutmeRoutes from './routes/aboutmeRoutes.js';
+import skillRoutes from './routes/skillRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -27,6 +29,7 @@ app.use('/uploads', express.static(uploadsPath)); // inputan gambar bakal ke fol
 app.use('/api/admin', adminRoutes);
 app.use('/api/project', projectRoutes);
 app.use('/api/aboutme', aboutmeRoutes);
+app.use('/api/skill', skillRoutes)
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

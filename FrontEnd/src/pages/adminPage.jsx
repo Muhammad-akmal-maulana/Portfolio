@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ProjectTable from '../components/adminPages/projectTable';
 import NavAdmin from '../components/adminPages/navAdmin';
 import AboutmeEdit from '../components/adminPages/aboutmeEdit';
+import SkillEdit from '../components/adminPages/skillEdit';
 
 function AdminPage() {
     const [activePage, setActivePage] = useState('aboutme'); // halaman default
@@ -16,6 +17,7 @@ function AdminPage() {
                 {activePage === 'project' && (
                     <ProjectTable setShowBottomBar={setShowBottomBar} />
                 )}
+                {activePage === 'skill' && <SkillEdit />}
             </div>
         </>
     );

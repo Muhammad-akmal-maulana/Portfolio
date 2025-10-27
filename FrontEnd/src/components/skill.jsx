@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Dropdown from './fitur/dropdown';
 import './style/skill.css';
-import FadeInAnimation from './fitur/fadeIn';
 
 function Skill() {
 
     return (
         <section className='skill-section section' id='skill-page'>
             <h1 className='fade-in'>Skill</h1>
-            <p className='fade-in'>Kemampuan Kemampuan Yang Saya Kuasai</p>
+            <p className='fade-in sub-title'>Kemampuan Yang Saya Kuasai</p>
 
             <div className="skill-container flex">
                 <div className="sub-skill-container fade-in">

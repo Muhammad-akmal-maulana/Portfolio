@@ -1,0 +1,33 @@
+/* pop up edit */
+.edit-skill section.pop-edit-skill {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 9999;
+}
+
+.edit-skill section.pop-edit-skill .header {
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.edit-skill section.pop-edit-skill i {
+    color: white;
+}
+
+.edit-skill section.pop-edit-skill div.flex>button:hover i {
+    color: red;
+}
+
+.edit-skill section.pop-edit-skill form {
+    background-color: white;
+}
+
+.edit-skill section.pop-edit-skill form p {
+    color: black;
+}
