@@ -66,7 +66,8 @@ function Project() {
                                 'regular flex justify-center align-item-center'
                             }
                             >
-                            <ProjectUser project={project} />
+                            {/* disable popup for small cards on the projects list */}
+                            <ProjectUser project={project} enablePopup={false} />
                         </div>
                     ))
                 ) : (

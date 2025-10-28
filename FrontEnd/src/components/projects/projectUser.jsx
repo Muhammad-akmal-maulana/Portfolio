@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../style/projectsPage.css'
 
-function ProjectUser({ project }) {
+function ProjectUser({ project, enablePopup = true }) {
     const [show, setShow] = useState(false);
     const dropdownRef = useRef(null);
 
     useEffect(() => {
+        if (!enablePopup) return; // don't attach listener when popup disabled
+
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setShow(false);
@@ -36,7 +38,7 @@ function ProjectUser({ project }) {
         <div className='project-page'>
             <button
                 className="project-card flex align-item-center"
-                onClick={() => setShow(!show)}
+                onClick={() => { if (enablePopup) setShow(!show); }}
             >
                 <div>
                     {project.image && (
@@ -48,7 +50,7 @@ function ProjectUser({ project }) {
                     )}
                     <div className="sub-project-card flex align-item-center justify-beetween">
                         <div>
-                            <h3>{batasiKata(project.title, 21)}</h3>
+                            <h3>{batasiKata(project.title, 18)}</h3>
                             <p className='deskripsi'>{batasiKata(project.deskripsi, 20)}</p>
                         </div>
                         <p className={`kategori ${project.kategori?.toLowerCase() === 'pkl' ? 'pkl blue-button' : 'non-pkl'}`}>
@@ -58,7 +60,7 @@ function ProjectUser({ project }) {
                 </div>
             </button>
 
-            {show && (
+            {enablePopup && show && (
                 <div className="pop-project" ref={dropdownRef}>
                     <div className="pop-content">
 
